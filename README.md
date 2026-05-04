@@ -35,7 +35,7 @@ The project demonstrates hardware/software co design using the Zynq Processing S
 
 ## System Architecture
 
-[Insert block diagram image here]
+![System block diagram](Block_Diagram.png)
 
 Audio path:
 
