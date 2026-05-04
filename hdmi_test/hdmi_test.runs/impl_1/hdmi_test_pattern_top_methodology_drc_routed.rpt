@@ -1,0 +1,95 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Fri May  1 03:25:52 2026
+| Host         : GN9HD17Q running 64-bit major release  (build 9200)
+| Command      : report_methodology -file hdmi_test_pattern_top_methodology_drc_routed.rpt -pb hdmi_test_pattern_top_methodology_drc_routed.pb -rpx hdmi_test_pattern_top_methodology_drc_routed.rpx
+| Design       : hdmi_test_pattern_top
+| Device       : xc7z010clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 10
++-----------+----------+---------------------------------------------+------------+
+| Rule      | Severity | Description                                 | Violations |
++-----------+----------+---------------------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert                | 1          |
+| TIMING-18 | Warning  | Missing input or output delay               | 8          |
+| XDCB-5    | Warning  | Runtime inefficient way to find pin objects | 1          |
++-----------+----------+---------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell u_pclk/pixel_x[9]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_sync/pixel_x_reg[6]/CLR, u_sync/pixel_x_reg[7]/CLR,
+u_sync/pixel_x_reg[8]/CLR, u_sync/pixel_x_reg[9]/CLR,
+u_sync/pixel_y_reg[0]/CLR, u_sync/pixel_y_reg[1]/CLR,
+u_sync/pixel_y_reg[2]/CLR, u_sync/pixel_y_reg[3]/CLR,
+u_sync/pixel_y_reg[4]/CLR, u_sync/pixel_y_reg[5]/CLR,
+u_sync/pixel_y_reg[6]/CLR, u_sync/pixel_y_reg[7]/CLR,
+u_sync/pixel_y_reg[8]/CLR, u_sync/pixel_y_reg[9]/CLR, u_sync/vsync_reg/PRE
+ (the first 15 of 22 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An output delay is missing on hdmi_tx_clk_n relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An output delay is missing on hdmi_tx_clk_p relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on hdmi_tx_d_n[0] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on hdmi_tx_d_n[1] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on hdmi_tx_d_n[2] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An output delay is missing on hdmi_tx_d_p[0] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on hdmi_tx_d_p[1] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on hdmi_tx_d_p[2] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+Related violations: <none>
+
+XDCB-5#1 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -filter {NAME =~ *SyncAsync*/oSyncStages_reg[0]/D} -hier]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '2' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: c:/Users/khuon/ECE520/final_project/hdmi_test/hdmi_test.gen/sources_1/ip/rgb2dvi_0/src/rgb2dvi.xdc (Line: 5)
+Related violations: <none>
+
+

@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# xsim v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sun May  3 19:56:44 2026
+# Process ID: 38264
+# Current directory: C:/Users/khuon/ECE520/final_project/phase2_scene_sim_xsim
+# Command line: xsim.exe -mode tcl -source {xsim.dir/tb_scene_engine_top_run/xsim_script.tcl}
+# Log file: C:/Users/khuon/ECE520/final_project/phase2_scene_sim_xsim/xsim.log
+# Journal file: C:/Users/khuon/ECE520/final_project/phase2_scene_sim_xsim\xsim.jou
+# Running On: GN9HD17Q, OS: Windows, CPU Frequency: 3072 MHz, CPU Physical cores: 24, Host memory: 33673 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_scene_engine_top_run/xsim_script.tcl
+# xsim {tb_scene_engine_top_run} -autoloadwcfg -tclbatch {run_all.tcl} -onerror quit
+Time resolution is 1 ps
+source run_all.tcl
+## run -all
+=== Scene Engine Top Testbench ===
+[PASS] Test 1: Reset - outputs zero
+[PASS] Test 2: Single scene 0 - bright pixel at center r=15
+[PASS] Test 3: Single scene 1 - bass bar at bottom g=11
+[PASS] Test 4: Single scene 2 - edge zone r=1 g=1 b=2
+[PASS] Test 5: Single scene 3 - tri-band low row red r=15
+[PASS] Test 6: Single mode x=320 NOT crosshair (r=15 g=7 b=3)
+[PASS] Test 7: Quad TL = scene 0 loudness center r=15
+[PASS] Test 8: Quad TR = scene 1 bass bars g=11
+[PASS] Test 9: Quad BL = scene 2 treble edge r=1 g=1 b=2
+[PASS] Test 10: Quad BR = scene 3 tri-band r=15
+[PASS] Test 11: Quad crosshair x=319 white
+[PASS] Test 12: Quad crosshair y=240 white
+[PASS] Test 13: Quad ignores scene_select (BR=scene3 always)
+[PASS] Test 14: Blanking is black in quad mode
+=== Scene Engine Top: ALL PASS ===
+$finish called at time : 437 ns : File "C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_engine_top.v" Line 243
+xsim% INFO: [Common 17-206] Exiting xsim at Sun May  3 19:56:46 2026...

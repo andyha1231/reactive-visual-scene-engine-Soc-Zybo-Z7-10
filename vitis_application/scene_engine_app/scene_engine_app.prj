@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="scene_engine_app" location="C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app" platform="C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/zybo_z7_10_plat.xpfm" platformUID="xilinx:zybo-z7-10::0.0(custom)" systemProject="scene_engine_app_system" sysConfig="zybo_z7_10_plat" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="15dc1b9b8df4256058d777aa17ba3876">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.814028760">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1911690264" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

@@ -1,0 +1,47 @@
+# macOS resource forks
+._*
+.DS_Store
+
+# Course materials (kept private)
+Course_Notes/
+Project_Overview/
+
+# Vivado / Vitis project files
+*.jou
+*.log
+*.str
+*.backup.*
+*.bak
+.Xil/
+.cache/
+.runs/
+.sim/
+.hw/
+.ip_user_files/
+*.cache/
+*.runs/
+*.sim/
+*.hw/
+*.ip_user_files/
+*.gen/
+*.tmp/
+*.xpr.bak
+
+# Vivado generated
+*.bit
+*.bin
+*.ltx
+*.dcp
+
+# Vitis workspace
+.metadata/
+.settings/
+.cproject
+.project
+Debug/
+Release/
+
+# Editor / IDE
+.vscode/
+*.swp
+*~

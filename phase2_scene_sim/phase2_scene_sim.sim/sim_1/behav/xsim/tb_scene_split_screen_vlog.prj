@@ -1,0 +1,4 @@
+verilog xil_defaultlib "C:\Users\khuon\ECE520\final_project\reactive-visual-scene-engine\rtl\scene_engine\scene_split_screen.v"
+verilog xil_defaultlib "C:\Users\khuon\ECE520\final_project\reactive-visual-scene-engine\tb\tb_scene_split_screen.v"
+verilog xil_defaultlib "C:\Users\khuon\ECE520\final_project\phase2_scene_sim\phase2_scene_sim.sim\sim_1\behav\xsim\glbl.v"
+nosort

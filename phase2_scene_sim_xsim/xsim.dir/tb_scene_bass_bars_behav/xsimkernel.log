@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_scene_bass_bars_behav/xsimk.exe -simmode gui -wdb tb_scene_bass_bars_behav.wdb -simrunnum 0 -socket 64403
+Design successfully loaded
+Design Loading Memory Usage: 10472 KB (Peak: 10472 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 11096 KB (Peak: 11096 KB)
+Simulation CPU Usage: 31 ms

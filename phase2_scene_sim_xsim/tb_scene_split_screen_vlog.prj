@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../reactive-visual-scene-engine/rtl/scene_engine/scene_split_screen.v" \
+"../reactive-visual-scene-engine/tb/tb_scene_split_screen.v" \
+
+verilog xil_defaultlib "glbl.v"
+nosort

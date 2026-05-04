@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../reactive-visual-scene-engine/rtl/feature_extraction/amplitude_detector.v" \
+"../../../../../reactive-visual-scene-engine/rtl/feature_extraction/band_energy.v" \
+"../../../../../reactive-visual-scene-engine/rtl/feature_extraction/feature_extraction_top.v" \
+"../../../../../reactive-visual-scene-engine/tb/tb_feature_extraction_top.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

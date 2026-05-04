@@ -1,0 +1,1 @@
+--debug "typical" --relax --mt "8" -L "xil_defaultlib" --snapshot "tb_scene_treble_flash_behav" "xil_defaultlib.tb_scene_treble_flash" "xil_defaultlib.glbl" 

@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# xsim v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sat May  2 03:35:35 2026
+# Process ID: 17528
+# Current directory: C:/Users/khuon/ECE520/final_project/phase2_scene_sim/phase2_scene_sim.sim/sim_1/behav/xsim
+# Command line: xsim.exe -mode tcl -source {xsim.dir/tb_scene_bass_bars_behav/xsim_script.tcl}
+# Log file: C:/Users/khuon/ECE520/final_project/phase2_scene_sim/phase2_scene_sim.sim/sim_1/behav/xsim/xsim.log
+# Journal file: C:/Users/khuon/ECE520/final_project/phase2_scene_sim/phase2_scene_sim.sim/sim_1/behav/xsim\xsim.jou
+# Running On: GN9HD17Q, OS: Windows, CPU Frequency: 3072 MHz, CPU Physical cores: 24, Host memory: 33673 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_scene_bass_bars_behav/xsim_script.tcl
+source tb_scene_bass_bars.tcl

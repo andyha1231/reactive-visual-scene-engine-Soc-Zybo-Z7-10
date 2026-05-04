@@ -1,0 +1,341 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sat May  2 04:23:15 2026
+# Process ID: 38472
+# Current directory: C:/Users/khuon/ECE520/final_project/phase2_scene_sim/phase2_scene_sim.runs/synth_1
+# Command line: vivado.exe -log scene_engine_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source scene_engine_top.tcl
+# Log file: C:/Users/khuon/ECE520/final_project/phase2_scene_sim/phase2_scene_sim.runs/synth_1/scene_engine_top.vds
+# Journal file: C:/Users/khuon/ECE520/final_project/phase2_scene_sim/phase2_scene_sim.runs/synth_1\vivado.jou
+# Running On: GN9HD17Q, OS: Windows, CPU Frequency: 3072 MHz, CPU Physical cores: 24, Host memory: 33673 MB
+#-----------------------------------------------------------
+source scene_engine_top.tcl -notrace
+Command: synth_design -top scene_engine_top -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 6880
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1941.199 ; gain = 412.723
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'scene_engine_top' [C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_engine_top.v:4]
+INFO: [Synth 8-6157] synthesizing module 'scene_loudness_pulse' [C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_loudness_pulse.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'scene_loudness_pulse' (0#1) [C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_loudness_pulse.v:4]
+INFO: [Synth 8-6157] synthesizing module 'scene_bass_bars' [C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_bass_bars.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'scene_bass_bars' (0#1) [C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_bass_bars.v:4]
+INFO: [Synth 8-6157] synthesizing module 'scene_treble_flash' [C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_treble_flash.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'scene_treble_flash' (0#1) [C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_treble_flash.v:4]
+INFO: [Synth 8-6157] synthesizing module 'scene_split_screen' [C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_split_screen.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'scene_split_screen' (0#1) [C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_split_screen.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'scene_engine_top' (0#1) [C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_engine_top.v:4]
+WARNING: [Synth 8-7129] Port amplitude[15] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[14] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[13] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[12] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[11] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[10] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[9] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[8] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[7] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[6] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[5] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[4] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[3] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[2] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[1] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[0] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[15] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[14] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[13] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[12] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[11] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[10] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[9] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[8] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[7] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[6] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[5] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[4] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[3] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[2] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[1] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[0] in module scene_split_screen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[15] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[14] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[13] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[12] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[11] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[10] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[9] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[8] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[7] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[6] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[5] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[4] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[3] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[2] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[1] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[0] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[15] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[14] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[13] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[12] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[11] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[10] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[9] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[8] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[7] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[6] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[5] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[4] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[3] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[2] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[1] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_low[0] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[11] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[10] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[9] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[8] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[7] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[6] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[5] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[4] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[3] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[2] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[1] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port energy_mid[0] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sensitivity[7] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sensitivity[6] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sensitivity[5] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sensitivity[4] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sensitivity[3] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sensitivity[2] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sensitivity[1] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sensitivity[0] in module scene_treble_flash is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[15] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[14] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[13] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[12] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[11] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[10] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[9] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[8] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[7] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[6] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[5] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[4] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[3] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[2] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[1] in module scene_bass_bars is either unconnected or has no load
+WARNING: [Synth 8-7129] Port amplitude[0] in module scene_bass_bars is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2032.379 ; gain = 503.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2032.379 ; gain = 503.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2032.379 ; gain = 503.902
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2032.379 ; gain = 503.902
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 4     
+	   3 Input   11 Bit       Adders := 2     
++---Registers : 
+	                4 Bit    Registers := 12    
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input   21 Bit        Muxes := 2     
+	   2 Input   10 Bit        Muxes := 2     
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 19    
+	   4 Input    4 Bit        Muxes := 4     
+	   6 Input    4 Bit        Muxes := 1     
+	   3 Input    4 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP u_scene2/scaled_energy, operation Mode is: A*B.
+DSP Report: operator u_scene2/scaled_energy is absorbed into DSP u_scene2/scaled_energy.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2232.035 ; gain = 703.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|scene_bass_bars | A*B         | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2232.035 ; gain = 703.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2232.035 ; gain = 703.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2232.035 ; gain = 703.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2232.035 ; gain = 703.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2232.035 ; gain = 703.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2232.035 ; gain = 703.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2232.035 ; gain = 703.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2232.035 ; gain = 703.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|scene_bass_bars | A*B         | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |    35|
+|3     |DSP48E1 |     1|
+|4     |LUT1    |     6|
+|5     |LUT2    |    76|
+|6     |LUT3    |    28|
+|7     |LUT4    |    38|
+|8     |LUT5    |    53|
+|9     |LUT6    |    41|
+|10    |FDCE    |    74|
+|11    |IBUF    |    78|
+|12    |OBUF    |    12|
++------+--------+------+
+
+Report Instance Areas: 
++------+-----------+---------------------+------+
+|      |Instance   |Module               |Cells |
++------+-----------+---------------------+------+
+|1     |top        |                     |   443|
+|2     |  u_scene1 |scene_loudness_pulse |    80|
+|3     |  u_scene2 |scene_bass_bars      |    52|
+|4     |  u_scene3 |scene_treble_flash   |   113|
+|5     |  u_scene4 |scene_split_screen   |   107|
++------+-----------+---------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2232.035 ; gain = 703.559
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 215 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2232.035 ; gain = 703.559
+Synthesis Optimization Complete : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2232.035 ; gain = 703.559
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2240.840 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2340.008 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 20f80c8e
+INFO: [Common 17-83] Releasing license: Synthesis
+23 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2340.008 ; gain = 836.379
+INFO: [Common 17-1381] The checkpoint 'C:/Users/khuon/ECE520/final_project/phase2_scene_sim/phase2_scene_sim.runs/synth_1/scene_engine_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file scene_engine_top_utilization_synth.rpt -pb scene_engine_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat May  2 04:23:35 2026...

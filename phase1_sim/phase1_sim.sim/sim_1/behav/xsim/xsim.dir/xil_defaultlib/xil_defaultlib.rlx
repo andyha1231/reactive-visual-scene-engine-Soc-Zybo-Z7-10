@@ -1,0 +1,11 @@
+0.7
+2020.2
+May  7 2023
+15:24:31
+C:/Users/khuon/ECE520/final_project/phase1_sim/phase1_sim.sim/sim_1/behav/xsim/glbl.v,1683266558,verilog,,,,glbl,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/feature_extraction/amplitude_detector.v,1777624575,verilog,,C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/feature_extraction/band_energy.v,,amplitude_detector,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/feature_extraction/band_energy.v,1777800697,verilog,,C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_band_energy.v,,band_energy,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/feature_extraction/feature_extraction_top.v,1777624575,verilog,,C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_feature_extraction_top.v,,feature_extraction_top,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_amplitude_detector.v,1777624575,verilog,,,,tb_amplitude_detector,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_band_energy.v,1777624575,verilog,,,,tb_band_energy,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_feature_extraction_top.v,1777710300,verilog,,,,tb_feature_extraction_top,,,,,,,,

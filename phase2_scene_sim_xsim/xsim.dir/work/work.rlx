@@ -1,0 +1,17 @@
+0.7
+2020.2
+May  7 2023
+15:24:31
+C:/Users/khuon/ECE520/final_project/phase2_scene_sim_xsim/glbl.v,1683266558,verilog,,,,glbl,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_bass_bars.v,1777624575,verilog,,C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_treble_flash.v,,scene_bass_bars,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_engine_top.v,1777863082,verilog,,C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_engine_top.v,,scene_engine_top,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_loudness_pulse.v,1777624575,verilog,,C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_bass_bars.v,,scene_loudness_pulse,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_split_screen.v,1777624575,verilog,,C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_split_screen.v,,scene_split_screen,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_treble_flash.v,1777863071,verilog,,C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_tri_band_eq.v,,scene_treble_flash,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_tri_band_eq.v,1777860022,verilog,,C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_engine_top.v,,scene_tri_band_eq,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_bass_bars.v,1777714868,verilog,,C:/Users/khuon/ECE520/final_project/phase2_scene_sim_xsim/glbl.v,,tb_scene_bass_bars,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_engine_top.v,1777861666,verilog,,C:/Users/khuon/ECE520/final_project/phase2_scene_sim_xsim/glbl.v,,tb_scene_engine_top,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_loudness_pulse.v,1777717480,verilog,,C:/Users/khuon/ECE520/final_project/phase2_scene_sim_xsim/glbl.v,,tb_scene_loudness_pulse,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_split_screen.v,1777717941,verilog,,C:/Users/khuon/ECE520/final_project/phase2_scene_sim_xsim/glbl.v,,tb_scene_split_screen,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_treble_flash.v,1777863254,verilog,,C:/Users/khuon/ECE520/final_project/phase2_scene_sim_xsim/glbl.v,,tb_scene_treble_flash,,,,,,,,
+C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_tri_band_eq.v,1777861567,verilog,,C:/Users/khuon/ECE520/final_project/phase2_scene_sim_xsim/glbl.v,,tb_scene_tri_band_eq,,,,,,,,

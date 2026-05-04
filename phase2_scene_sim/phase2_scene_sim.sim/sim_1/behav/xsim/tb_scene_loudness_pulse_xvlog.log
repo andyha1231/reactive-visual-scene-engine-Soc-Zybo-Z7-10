@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_loudness_pulse.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scene_loudness_pulse
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_loudness_pulse.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_scene_loudness_pulse
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/khuon/ECE520/final_project/phase2_scene_sim/phase2_scene_sim.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

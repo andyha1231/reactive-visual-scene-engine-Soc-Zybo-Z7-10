@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_scene_engine_top_run/xsimk.exe -simmode gui -wdb tb_scene_engine_top_run.wdb -simrunnum 0 -socket 59630
+Design successfully loaded
+Design Loading Memory Usage: 10476 KB (Peak: 10476 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 11120 KB (Peak: 11120 KB)
+Simulation CPU Usage: 0 ms

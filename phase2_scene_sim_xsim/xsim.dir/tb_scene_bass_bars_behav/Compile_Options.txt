@@ -1,0 +1,1 @@
+--debug "typical" --relax --mt "8" -L "xil_defaultlib" --snapshot "tb_scene_bass_bars_behav" "xil_defaultlib.tb_scene_bass_bars" "xil_defaultlib.glbl" 

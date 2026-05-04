@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Fri May  1 03:25:20 2026
+# Process ID: 10748
+# Current directory: C:/Users/khuon/ECE520/final_project/hdmi_test/hdmi_test.runs/impl_1
+# Command line: vivado.exe -log hdmi_test_pattern_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source hdmi_test_pattern_top.tcl -notrace
+# Log file: C:/Users/khuon/ECE520/final_project/hdmi_test/hdmi_test.runs/impl_1/hdmi_test_pattern_top.vdi
+# Journal file: C:/Users/khuon/ECE520/final_project/hdmi_test/hdmi_test.runs/impl_1\vivado.jou
+# Running On: GN9HD17Q, OS: Windows, CPU Frequency: 3072 MHz, CPU Physical cores: 24, Host memory: 33673 MB
+#-----------------------------------------------------------
+source hdmi_test_pattern_top.tcl -notrace

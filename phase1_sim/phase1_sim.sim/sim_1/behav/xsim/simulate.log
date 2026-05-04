@@ -1,0 +1,26 @@
+Time resolution is 1 ps
+=== Feature Extraction Top Testbench ===
+[PASS] Test 1: Reset - all outputs zero
+[PASS] Test 2: Silence - amplitude stays zero
+[PASS] Test 3: DC offset - amplitude rose to 16381
+[TEST] Test 4: 100Hz bass:
+    amp=16380  lo=10994  mid=7618  hi=1245
+[PASS] Test 4: Bass - energy_low (10994) > energy_high (1245)
+[TEST] Test 5: 4000Hz treble:
+    amp=16380  lo=549  mid=6048  hi=19763
+[PASS] Test 5: Treble - energy_high (19763) > energy_low (549)
+[TEST] Test 6: 1000Hz mid:
+    amp=16380  lo=2756  mid=12369  hi=5742
+[PASS] Test 6: Mid - energy_mid elevated (12369)
+[TEST] Test 7: Before silence:
+    amp=16380  lo=1328  mid=9530  hi=12187
+[PASS] Test 7: Decay - amplitude fell from 16380 to 63
+[PASS] Test 8: Gating - amplitude frozen at 16380 with valid=0
+[TEST] Test 9: Alternating bass -> treble:
+  After bass:
+    amp=16380  lo=13906  mid=5361  hi=1702
+  After treble:
+    amp=16380  lo=557  mid=6052  hi=19763
+[PASS] Test 9: Alternating tones completed
+=== Feature Extraction Top Testbench COMPLETE ===
+$finish called at time : 1144956 ns : File "C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_feature_extraction_top.v" Line 255

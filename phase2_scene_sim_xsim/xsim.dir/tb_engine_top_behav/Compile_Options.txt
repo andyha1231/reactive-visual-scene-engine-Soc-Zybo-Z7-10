@@ -1,0 +1,1 @@
+--debug "typical" --relax --mt "8" -L "work" --snapshot "tb_engine_top_behav" "work.tb_scene_engine_top" "work.glbl" 

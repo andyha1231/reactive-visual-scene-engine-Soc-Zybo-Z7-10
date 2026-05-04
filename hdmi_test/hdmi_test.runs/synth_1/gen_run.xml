@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1777631084" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/hdmi_test_pattern_top.dcp">
+  <File Type="PA-TCL" Name="hdmi_test_pattern_top.tcl"/>
+  <File Type="REPORTS-TCL" Name="hdmi_test_pattern_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="hdmi_test_pattern_top.vds"/>
+  <File Type="RDS-UTIL" Name="hdmi_test_pattern_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="hdmi_test_pattern_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="hdmi_test_pattern_top.dcp"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/video/pixel_clk_gen.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../reactive-visual-scene-engine/rtl/video/pixel_clk_gen.v"/>
+        <Attr Name="ImportTime" Val="1777624575"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/video/vga_sync.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../reactive-visual-scene-engine/rtl/video/vga_sync.v"/>
+        <Attr Name="ImportTime" Val="1777624575"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/top/hdmi_test_pattern_top.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../reactive-visual-scene-engine/rtl/top/hdmi_test_pattern_top.v"/>
+        <Attr Name="ImportTime" Val="1777624575"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="hdmi_test_pattern_top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/constraints/zybo_z7_hdmi.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../reactive-visual-scene-engine/constraints/zybo_z7_hdmi.xdc"/>
+        <Attr Name="ImportTime" Val="1777624575"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/hdmi_test_pattern_top.dcp">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../rsse/rsse.srcs/utils_1/imports/synth_1/hdmi_test_pattern_top.dcp"/>
+        <Attr Name="ImportTime" Val="1777627552"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="rgb2dvi_0"/>
+</GenRun>

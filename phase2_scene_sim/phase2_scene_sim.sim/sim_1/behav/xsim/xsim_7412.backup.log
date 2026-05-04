@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# xsim v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sat May  2 03:35:07 2026
+# Process ID: 7412
+# Current directory: C:/Users/khuon/ECE520/final_project/phase2_scene_sim/phase2_scene_sim.sim/sim_1/behav/xsim
+# Command line: xsim.exe -mode tcl -source {xsim.dir/tb_scene_loudness_pulse_behav/xsim_script.tcl}
+# Log file: C:/Users/khuon/ECE520/final_project/phase2_scene_sim/phase2_scene_sim.sim/sim_1/behav/xsim/xsim.log
+# Journal file: C:/Users/khuon/ECE520/final_project/phase2_scene_sim/phase2_scene_sim.sim/sim_1/behav/xsim\xsim.jou
+# Running On: GN9HD17Q, OS: Windows, CPU Frequency: 3072 MHz, CPU Physical cores: 24, Host memory: 33673 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_scene_loudness_pulse_behav/xsim_script.tcl
+# xsim {tb_scene_loudness_pulse_behav} -autoloadwcfg -tclbatch {tb_scene_loudness_pulse.tcl}
+Time resolution is 1 ps
+source tb_scene_loudness_pulse.tcl
+## run 2ms
+=== Scene Loudness Pulse Testbench ===
+[PASS] Test 1: Reset - outputs zero
+[PASS] Test 2: Blanking is black
+[PASS] Test 3: Active+silence - background pixel r=1 g=0 b=1
+[PASS] Test 4: Loud center - r=7 (non-zero brightness)
+[PASS] Test 5: Quiet corner - background color visible r=1 b=1
+[PASS] Test 6: Blanking override - stays black
+=== Scene Loudness Pulse: ALL PASS ===
+$finish called at time : 141 ns : File "C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_loudness_pulse.v" Line 130
+## quit
+INFO: [Common 17-206] Exiting xsim at Sat May  2 03:35:09 2026...

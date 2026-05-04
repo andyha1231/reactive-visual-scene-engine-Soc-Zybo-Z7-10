@@ -1,0 +1,1 @@
+--debug "typical" --relax --mt "8" -L "xil_defaultlib" --snapshot "tb_scene_split_screen_behav" "xil_defaultlib.tb_scene_split_screen" "xil_defaultlib.glbl" 

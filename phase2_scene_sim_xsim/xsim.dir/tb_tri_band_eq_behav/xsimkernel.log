@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_tri_band_eq_behav/xsimk.exe -simmode gui -wdb tb_tri_band_eq_behav.wdb -simrunnum 0 -socket 59403
+Design successfully loaded
+Design Loading Memory Usage: 10472 KB (Peak: 10472 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 11096 KB (Peak: 11096 KB)
+Simulation CPU Usage: 15 ms

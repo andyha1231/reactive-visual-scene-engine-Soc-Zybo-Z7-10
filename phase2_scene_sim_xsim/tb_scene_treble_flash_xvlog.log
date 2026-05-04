@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/rtl/scene_engine/scene_treble_flash.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scene_treble_flash
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_treble_flash.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_scene_treble_flash
+ERROR: [VRFC 10-8885] declarations are not allowed in an unnamed block [C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_treble_flash.v:130]
+ERROR: [VRFC 10-8530] module 'tb_scene_treble_flash' is ignored due to previous errors [C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_treble_flash.v:6]

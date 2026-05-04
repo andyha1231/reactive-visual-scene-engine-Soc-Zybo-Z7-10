@@ -1,0 +1,1 @@
+--debug "typical" --relax --mt "8" -L "work" --snapshot "tb_tri_band_eq_behav" "work.tb_scene_tri_band_eq" "work.glbl" 

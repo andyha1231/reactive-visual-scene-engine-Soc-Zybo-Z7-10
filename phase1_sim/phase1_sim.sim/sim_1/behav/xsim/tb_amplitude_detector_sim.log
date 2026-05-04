@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# xsim v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sat May  2 03:13:30 2026
+# Process ID: 11288
+# Current directory: C:/Users/khuon/ECE520/final_project/phase1_sim/phase1_sim.sim/sim_1/behav/xsim
+# Command line: xsim.exe -log tb_amplitude_detector_sim.log -mode tcl -source {xsim.dir/tb_amplitude_detector_behav/xsim_script.tcl}
+# Log file: C:/Users/khuon/ECE520/final_project/phase1_sim/phase1_sim.sim/sim_1/behav/xsim/tb_amplitude_detector_sim.log
+# Journal file: C:/Users/khuon/ECE520/final_project/phase1_sim/phase1_sim.sim/sim_1/behav/xsim\xsim.jou
+# Running On: GN9HD17Q, OS: Windows, CPU Frequency: 3072 MHz, CPU Physical cores: 24, Host memory: 33673 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_amplitude_detector_behav/xsim_script.tcl
+# xsim {tb_amplitude_detector_behav} -autoloadwcfg -tclbatch {run_all.tcl}
+Time resolution is 1 ps
+source run_all.tcl
+## run -all
+=== Amplitude Detector Testbench ===
+[PASS] Reset: amplitude is zero
+[TEST] Feeding positive samples...
+  Amplitude after positive burst: 16381
+[PASS] Amplitude rose with positive input
+[TEST] Feeding negative samples...
+  Amplitude after negative burst: 16381
+[PASS] Amplitude tracks absolute value
+[TEST] Feeding silence (decay test)...
+  Amplitude after silence:    63
+=== Amplitude Detector Testbench Complete ===
+$finish called at time : 61724 ns : File "C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_amplitude_detector.v" Line 95

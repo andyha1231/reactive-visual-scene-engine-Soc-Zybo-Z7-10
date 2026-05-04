@@ -1,0 +1,39 @@
+Nothing to build in platform 'zybo_z7_10_plat'
+
+20:03:34 **** Incremental Build of configuration Debug for project scene_engine_app ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/button_handler.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/button_handler.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/sw/zybo_z7_10_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/button_handler.d" -MT"src/button_handler.o" -o "src/button_handler.o" "../src/button_handler.c"
+'Finished building: ../src/button_handler.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/sw/zybo_z7_10_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/scene_ctrl.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/scene_ctrl.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/sw/zybo_z7_10_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/scene_ctrl.d" -MT"src/scene_ctrl.o" -o "src/scene_ctrl.o" "../src/scene_ctrl.c"
+'Finished building: ../src/scene_ctrl.c'
+' '
+'Building file: ../src/uart_menu.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/uart_menu.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/sw/zybo_z7_10_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/uart_menu.d" -MT"src/uart_menu.o" -o "src/uart_menu.o" "../src/uart_menu.c"
+'Finished building: ../src/uart_menu.c'
+' '
+'Building target: scene_engine_app.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/sw/zybo_z7_10_plat/standalone_domain/bsplib/lib -o "scene_engine_app.elf"  ./src/button_handler.o ./src/main.o ./src/scene_ctrl.o ./src/uart_menu.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: scene_engine_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size scene_engine_app.elf  |tee "scene_engine_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27870	   1176	  22664	  51710	   c9fe	scene_engine_app.elf
+'Finished building: scene_engine_app.elf.size'
+' '
