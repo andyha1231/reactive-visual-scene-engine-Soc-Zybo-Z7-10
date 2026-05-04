@@ -17,7 +17,11 @@ module audio_sample_reader #(
     output wire                    bram_en,
     // Sample output
     output reg  [15:0]             sample_out,
-    output reg                     sample_valid
+    output reg                     sample_valid,
+    // Pulse-stretched flag: held high for ~16 sys_clk cycles each time bram_addr
+    // wraps from SAMPLE_COUNT-1 back to 0. Drives scene_ctrl wrap-flag register
+    // so PS knows it can stream the next chunk into BRAM Port A.
+    output wire                    wrap_pulse
 );
 
     // Clock divider: CLK_FREQ / SAMPLE_RATE
@@ -48,17 +52,37 @@ module audio_sample_reader #(
         end
     end
 
-    // BRAM address counter
+    // BRAM address counter + wrap detection
+    reg wrap_event;
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            bram_addr <= 0;
+            bram_addr  <= 0;
+            wrap_event <= 1'b0;
         end else if (en && tick) begin
-            if (bram_addr == SAMPLE_COUNT - 1)
-                bram_addr <= 0;
-            else
-                bram_addr <= bram_addr + 1;
+            if (bram_addr == SAMPLE_COUNT - 1) begin
+                bram_addr  <= 0;
+                wrap_event <= 1'b1;
+            end else begin
+                bram_addr  <= bram_addr + 1;
+                wrap_event <= 1'b0;
+            end
+        end else begin
+            wrap_event <= 1'b0;
         end
     end
+
+    // Pulse-stretch wrap_event so a slower destination clock (clk_fpga_0 = 100 MHz)
+    // can synchronize it reliably without missing the 1-cycle pulse.
+    reg [3:0] wrap_stretch;
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n)
+            wrap_stretch <= 4'd0;
+        else if (wrap_event)
+            wrap_stretch <= 4'd15;     // hold high for 15 cycles (~120 ns @ 125 MHz)
+        else if (wrap_stretch != 0)
+            wrap_stretch <= wrap_stretch - 1;
+    end
+    assign wrap_pulse = (wrap_stretch != 0);
 
     // Capture BRAM output (1 cycle latency after address)
     always @(posedge clk or negedge rst_n) begin

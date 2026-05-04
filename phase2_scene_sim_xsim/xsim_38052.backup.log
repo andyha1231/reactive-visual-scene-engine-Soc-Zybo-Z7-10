@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# xsim v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Mon May  4 03:29:30 2026
+# Process ID: 38052
+# Current directory: C:/Users/khuon/ECE520/final_project/phase2_scene_sim_xsim
+# Command line: xsim.exe -mode tcl -source {xsim.dir/tb_scene_loudness_pulse_run/xsim_script.tcl}
+# Log file: C:/Users/khuon/ECE520/final_project/phase2_scene_sim_xsim/xsim.log
+# Journal file: C:/Users/khuon/ECE520/final_project/phase2_scene_sim_xsim\xsim.jou
+# Running On: GN9HD17Q, OS: Windows, CPU Frequency: 3072 MHz, CPU Physical cores: 24, Host memory: 33673 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_scene_loudness_pulse_run/xsim_script.tcl
+# xsim {tb_scene_loudness_pulse_run} -autoloadwcfg -tclbatch {run_all.tcl} -onerror quit
+Time resolution is 1 ps
+source run_all.tcl
+## run -all
+=== Scene 1 (Concentric Circles) Testbench ===
+[PASS] Test 1: Reset
+[PASS] Test 2: Blanking
+[PASS] Test 3: Sun core - yellow (15,12,2)
+[PASS] Test 4: Off-pattern - dim purple bg
+[PASS] Test 5: Silent music -> bg
+[PASS] Test 6: Loud amp - ring lit r=15 g=7
+[PASS] Test 7a: Ring 8 lit at high amp
+[PASS] Test 7b: Ring 8 dark at low amp
+=== Scene 1 (Concentric Circles): ALL PASS ===
+$finish called at time : 213 ns : File "C:/Users/khuon/ECE520/final_project/reactive-visual-scene-engine/tb/tb_scene_loudness_pulse.v" Line 123
+xsim% INFO: [Common 17-206] Exiting xsim at Mon May  4 03:29:32 2026...

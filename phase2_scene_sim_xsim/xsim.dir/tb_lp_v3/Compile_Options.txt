@@ -1,0 +1,1 @@
+--debug "typical" --relax --mt "8" -L "work" --snapshot "tb_lp_v3" "work.tb_scene_loudness_pulse" "work.glbl" 

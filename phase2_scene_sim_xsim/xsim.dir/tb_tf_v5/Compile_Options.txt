@@ -1,0 +1,1 @@
+--debug "typical" --relax --mt "8" -L "work" --snapshot "tb_tf_v5" "work.tb_scene_treble_flash" "work.glbl" 

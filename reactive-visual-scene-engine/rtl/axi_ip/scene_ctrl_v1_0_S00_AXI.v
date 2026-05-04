@@ -8,7 +8,7 @@
 
 module scene_ctrl_v1_0_S00_AXI #(
     parameter integer C_S_AXI_DATA_WIDTH = 32,
-    parameter integer C_S_AXI_ADDR_WIDTH = 5   // 2^5 = 32 bytes (6 regs * 4 bytes)
+    parameter integer C_S_AXI_ADDR_WIDTH = 5   // 2^5 = 32 bytes (8 regs max)
 )(
     // Control outputs to PL
     output wire [1:0]  scene_select,
@@ -17,6 +17,11 @@ module scene_ctrl_v1_0_S00_AXI #(
     output wire [15:0] threshold,
     output wire        auto_mode,
     output wire        debug_en,
+
+    // Audio streaming wrap flag input (from audio_sample_reader, sys_clk domain).
+    // Pulse-stretched in source so this 2-FF synchronizer + edge-detect catches
+    // every wrap event reliably.
+    input  wire        wrap_pulse_async,
 
     // AXI4-Lite slave interface signals
     input  wire                              S_AXI_ACLK,
@@ -56,6 +61,7 @@ module scene_ctrl_v1_0_S00_AXI #(
     // Offset 0x0C: THRESHOLD    [15:0] RW  Feature threshold
     // Offset 0x10: MODE_CTRL    [0]    RW  0=manual, 1=auto
     // Offset 0x14: DEBUG_EN     [0]    RW  Debug overlay enable
+    // Offset 0x18: WRAP_FLAG    [0]    R/W1C  Set on each BRAM wrap; write 1 to clear
     // ---------------------------------------------------------------
 
     reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg0;  // SCENE_SEL
@@ -64,6 +70,7 @@ module scene_ctrl_v1_0_S00_AXI #(
     reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg3;  // THRESHOLD
     reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg4;  // MODE_CTRL
     reg [C_S_AXI_DATA_WIDTH-1:0] slv_reg5;  // DEBUG_EN
+    reg                          wrap_flag; // sticky bit, set by wrap_pulse_async, cleared by W1C
 
     // Map register fields to output ports
     assign scene_select  = slv_reg0[1:0];
@@ -72,6 +79,23 @@ module scene_ctrl_v1_0_S00_AXI #(
     assign threshold     = slv_reg3[15:0];
     assign auto_mode     = slv_reg4[0];
     assign debug_en      = slv_reg5[0];
+
+    // ---------------------------------------------------------------
+    // wrap_pulse synchronizer + edge detect (CDC: sys_clk -> S_AXI_ACLK)
+    // ---------------------------------------------------------------
+    reg wrap_sync_1, wrap_sync_2, wrap_sync_seen;
+    always @(posedge S_AXI_ACLK) begin
+        if (!S_AXI_ARESETN) begin
+            wrap_sync_1    <= 1'b0;
+            wrap_sync_2    <= 1'b0;
+            wrap_sync_seen <= 1'b0;
+        end else begin
+            wrap_sync_1    <= wrap_pulse_async;
+            wrap_sync_2    <= wrap_sync_1;
+            wrap_sync_seen <= wrap_sync_2;
+        end
+    end
+    wire wrap_event = wrap_sync_2 & ~wrap_sync_seen;  // rising edge in AXI clock domain
 
     // --- AXI handshake logic ---
     reg axi_awready, axi_wready, axi_bvalid;
@@ -114,12 +138,13 @@ module scene_ctrl_v1_0_S00_AXI #(
 
     // Write register logic
     wire slv_reg_wren = axi_wready && S_AXI_WVALID && axi_awready && S_AXI_AWVALID;
+    wire wrap_clear  = slv_reg_wren && (axi_awaddr[4:2] == 3'd6) && S_AXI_WDATA[0];
 
     always @(posedge S_AXI_ACLK) begin
         if (!S_AXI_ARESETN) begin
             slv_reg0 <= 32'd0;   // Default scene 0
             slv_reg1 <= 32'd0;   // Default preset 0
-            slv_reg2 <= 32'd128; // Default sensitivity mid-range
+            slv_reg2 <= 32'd240; // Default sensitivity (near max; bigger bars before software writes)
             slv_reg3 <= 32'd0;   // Default threshold 0
             slv_reg4 <= 32'd0;   // Default manual mode
             slv_reg5 <= 32'd0;   // Default debug off
@@ -131,9 +156,20 @@ module scene_ctrl_v1_0_S00_AXI #(
                 3'd3: slv_reg3 <= S_AXI_WDATA;
                 3'd4: slv_reg4 <= S_AXI_WDATA;
                 3'd5: slv_reg5 <= S_AXI_WDATA;
+                // 3'd6 (WRAP_FLAG) handled below
                 default: ;
             endcase
         end
+    end
+
+    // WRAP_FLAG: sticky bit, set by wrap_event, cleared by writing 1 to bit 0 at offset 0x18
+    always @(posedge S_AXI_ACLK) begin
+        if (!S_AXI_ARESETN)
+            wrap_flag <= 1'b0;
+        else if (wrap_event)
+            wrap_flag <= 1'b1;
+        else if (wrap_clear)
+            wrap_flag <= 1'b0;
     end
 
     // Write response
@@ -187,6 +223,7 @@ module scene_ctrl_v1_0_S00_AXI #(
                 3'd3: axi_rdata <= slv_reg3;
                 3'd4: axi_rdata <= slv_reg4;
                 3'd5: axi_rdata <= slv_reg5;
+                3'd6: axi_rdata <= {31'd0, wrap_flag};
                 default: axi_rdata <= 32'd0;
             endcase
         end

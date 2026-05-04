@@ -1,0 +1,18 @@
+/*
+ * song_data.c -- DEFAULT placeholder (silence).
+ *
+ * Run tools/gen_song_data.py with a WAV file to OVERWRITE this with real
+ * audio. The default 32768-sample silent buffer just lets the build succeed
+ * before a real song is loaded. With this default, the audio reader plays
+ * the synth-time BRAM contents (audio_samples.coe) on a loop and the PS
+ * streamer's writes contain silence.
+ */
+
+#include "song_data.h"
+
+const uint32_t song_total_samples = 32768;
+const uint32_t song_chunk_samples = 32768;
+const uint32_t song_sample_rate  = 11025;
+
+/* 32768 samples of silence (zero-initialized at link time -> .bss, no ELF bloat). */
+const int16_t song_data[32768] = { 0 };

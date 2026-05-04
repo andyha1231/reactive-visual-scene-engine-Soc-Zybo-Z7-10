@@ -1,7 +1,7 @@
-Running: xsim.dir/tb_scene_treble_flash_run/xsimk.exe -simmode gui -wdb tb_scene_treble_flash_run.wdb -simrunnum 0 -socket 55389
+Running: xsim.dir/tb_scene_treble_flash_run/xsimk.exe -simmode gui -wdb tb_scene_treble_flash_run.wdb -simrunnum 0 -socket 65118
 Design successfully loaded
-Design Loading Memory Usage: 10464 KB (Peak: 10464 KB)
-Design Loading CPU Usage: 15 ms
+Design Loading Memory Usage: 9596 KB (Peak: 9596 KB)
+Design Loading CPU Usage: 30 ms
 Simulation completed
-Simulation Memory Usage: 11076 KB (Peak: 11076 KB)
-Simulation CPU Usage: 15 ms
+Simulation Memory Usage: 10172 KB (Peak: 10172 KB)
+Simulation CPU Usage: 30 ms

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Sun May  3 20:02:25 2026
+| Date             : Mon May  4 03:40:37 2026
 | Host             : GN9HD17Q running 64-bit major release  (build 9200)
 | Command          : report_power -file reactive_scene_top_ps_power_routed.rpt -pb reactive_scene_top_ps_power_summary_routed.pb -rpx reactive_scene_top_ps_power_routed.rpx
 | Design           : reactive_scene_top_ps
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.870        |
+| Total On-Chip Power (W)  | 1.871        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.740        |
+| Dynamic (W)              | 1.741        |
 | Device Static (W)        | 0.130        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 63.4         |
@@ -52,23 +52,23 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.027 |        7 |       --- |             --- |
-| Slice Logic              |     0.021 |    14405 |       --- |             --- |
-|   LUT as Logic           |     0.018 |     5148 |     17600 |           29.25 |
+| Clocks                   |     0.026 |        7 |       --- |             --- |
+| Slice Logic              |     0.020 |    14349 |       --- |             --- |
+|   LUT as Logic           |     0.017 |     5109 |     17600 |           29.03 |
 |   LUT as Distributed RAM |     0.001 |      410 |      6000 |            6.83 |
-|   Register               |     0.001 |     5808 |     35200 |           16.50 |
-|   CARRY4                 |    <0.001 |      155 |      4400 |            3.52 |
+|   Register               |     0.001 |     5819 |     35200 |           16.53 |
+|   CARRY4                 |    <0.001 |      140 |      4400 |            3.18 |
 |   LUT as Shift Register  |    <0.001 |      327 |      6000 |            5.45 |
-|   F7/F8 Muxes            |    <0.001 |       42 |     17600 |            0.24 |
-|   Others                 |     0.000 |      746 |       --- |             --- |
-| Signals                  |     0.025 |     9562 |       --- |             --- |
-| Block RAM                |     0.025 |       29 |        60 |           48.33 |
+|   F7/F8 Muxes            |    <0.001 |       43 |     17600 |            0.24 |
+|   Others                 |     0.000 |      754 |       --- |             --- |
+| Signals                  |     0.024 |     9561 |       --- |             --- |
+| Block RAM                |     0.028 |       29 |        60 |           48.33 |
 | MMCM                     |     0.106 |        1 |         2 |           50.00 |
 | DSPs                     |     0.002 |        2 |        80 |            2.50 |
 | I/O                      |     0.134 |       18 |       100 |           18.00 |
 | PS7                      |     1.400 |        1 |       --- |             --- |
 | Static Power             |     0.130 |          |           |                 |
-| Total                    |     1.870 |          |           |                 |
+| Total                    |     1.871 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -158,7 +158,7 @@ Table of Contents
 +--------------------------------------+-----------+
 | Name                                 | Power (W) |
 +--------------------------------------+-----------+
-| reactive_scene_top_ps                |     1.740 |
+| reactive_scene_top_ps                |     1.741 |
 |   u_audio                            |     0.001 |
 |   u_ctrl                             |     0.001 |
 |     u_s00_axi                        |     0.001 |
@@ -171,11 +171,11 @@ Table of Contents
 |       DataEncoders[1].DataSerializer |     0.034 |
 |       DataEncoders[2].DataSerializer |     0.034 |
 |   u_pclk                             |     0.106 |
-|   u_ps                               |     1.486 |
-|     design_1_i                       |     1.486 |
+|   u_ps                               |     1.487 |
+|     design_1_i                       |     1.487 |
 |       axi_bram_ctrl_0                |     0.003 |
-|       axi_bram_ctrl_0_bram_0         |     0.027 |
-|       axi_smc                        |     0.055 |
+|       axi_bram_ctrl_0_bram_0         |     0.030 |
+|       axi_smc                        |     0.054 |
 |       processing_system7_0           |     1.400 |
 |   u_scene                            |     0.004 |
 |     u_scene2                         |     0.002 |

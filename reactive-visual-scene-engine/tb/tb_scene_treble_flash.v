@@ -1,6 +1,4 @@
-// tb_scene_treble_flash.v
-// Tests scene_treble_flash: reset, blanking, edge flash behavior, center glow.
-// Run for 10ms to observe flash_state toggling.
+// tb_scene_treble_flash.v -- Scene 3 "Multicolor Particle Storm"
 `timescale 1ns / 1ps
 
 module tb_scene_treble_flash;
@@ -27,13 +25,8 @@ module tb_scene_treble_flash;
     always #(CLK_PERIOD / 2) clk = ~clk;
 
     integer fail_count;
-    integer i;
-    reg saw_bright, saw_dark;
-    reg [3:0] r_snap;
 
-    task pixel_tick; begin @(posedge clk); #1; end endtask
-
-    task drive_pixel;
+    task drive;
         input [9:0]  px, py;
         input        av;
         input [15:0] e_high, e_mid;
@@ -43,109 +36,99 @@ module tb_scene_treble_flash;
             active_video = av;
             energy_high  = e_high;
             energy_mid   = e_mid;
-            pixel_tick;
+            repeat (2) @(posedge clk); #1;
         end
     endtask
 
     initial begin
-        $display("=== Scene Treble Flash Testbench ===");
-        fail_count = 0;
+        $display("=== Scene 3 (Multicolor Particle Storm) Testbench ===");
+        fail_count   = 0;
 
         rst_n        = 0;
+        freeze       = 1;
         active_video = 0;
-        freeze       = 0;
         pixel_x      = 0; pixel_y = 0;
         amplitude    = 0; energy_low = 0; energy_mid = 0; energy_high = 0;
         sensitivity  = 8'd128;
         repeat (10) @(posedge clk);
 
-        // --- Test 1: Reset ---
         if (r === 4'd0 && g === 4'd0 && b === 4'd0)
-            $display("[PASS] Test 1: Reset - outputs zero");
+            $display("[PASS] Test 1: Reset");
         else begin
-            $display("[FAIL] Test 1: Reset r=%0d g=%0d b=%0d", r, g, b);
-            fail_count = fail_count + 1;
+            $display("[FAIL] Test 1: r=%0d g=%0d b=%0d", r, g, b); fail_count = fail_count+1;
         end
 
         rst_n = 1;
         repeat (3) @(posedge clk);
 
-        // --- Test 2: Blanking ---
-        drive_pixel(10'd5, 10'd5, 1'b0, 16'hFFFF, 16'hFFFF);
+        drive(10'd54, 10'd86, 1'b0, 16'hFFFF, 16'hFFFF);
         if (r === 4'd0 && g === 4'd0 && b === 4'd0)
-            $display("[PASS] Test 2: Blanking is black");
+            $display("[PASS] Test 2: Blanking");
         else begin
-            $display("[FAIL] Test 2: Blanking not black r=%0d g=%0d b=%0d", r, g, b);
-            fail_count = fail_count + 1;
+            $display("[FAIL] Test 2: r=%0d g=%0d b=%0d", r, g, b); fail_count = fail_count+1;
         end
 
-        // --- Test 3: Center pixel with no treble → center glow uses energy_mid ---
-        // energy_mid=0 → center_brightness=0 → center pixels are fully black
-        drive_pixel(10'd320, 10'd240, 1'b1, 16'd0, 16'd0);
-        if (r === 4'd0 && b === 4'd0)
-            $display("[PASS] Test 3: Center quiet - black center r=%0d b=%0d", r, b);
+        // T3: Particle at cell (3,5) -> color_id=(3+5+0)&3=0 -> RED
+        // cell_phase=8, tri_b=4, bright=4, output (4,0,0)
+        drive(10'd54, 10'd86, 1'b1, 16'd0, 16'd0);
+        if (r === 4'd4 && g === 4'd0 && b === 4'd0)
+            $display("[PASS] Test 3: Particle red (cell 3,5) - r=4");
         else begin
-            $display("[FAIL] Test 3: Center quiet - expected black, got r=%0d b=%0d", r, b);
-            fail_count = fail_count + 1;
+            $display("[FAIL] Test 3: r=%0d g=%0d b=%0d (expected 4,0,0)", r, g, b); fail_count = fail_count+1;
         end
 
-        // --- Test 4: Center pixel with mid energy → subtle glow ---
-        // energy_mid=0x8000 → center_brightness=0x8000[15:12]=8
-        drive_pixel(10'd320, 10'd240, 1'b1, 16'd0, 16'h8000);
-        if (b > 4'd0)
-            $display("[PASS] Test 4: Center mid energy - glow visible b=%0d", b);
+        // T4: Particle at cell (4,5) -> color_id=1 -> GREEN
+        drive(10'd70, 10'd86, 1'b1, 16'd0, 16'd0);
+        if (r === 4'd0 && g === 4'd4 && b === 4'd0)
+            $display("[PASS] Test 4: Particle green (cell 4,5) - g=4");
         else begin
-            $display("[FAIL] Test 4: Center mid energy - expected b>0");
-            fail_count = fail_count + 1;
+            $display("[FAIL] Test 4: r=%0d g=%0d b=%0d (expected 0,4,0)", r, g, b); fail_count = fail_count+1;
         end
 
-        // --- Test 5: Edge pixel with high treble → flash_state will toggle ---
-        // energy_high=0xFFFF → flash_period = ~0xFFFF = 0 → toggles every cycle
-        // Run several clocks while monitoring edge pixel, expect both bright and dark states
-        energy_high  = 16'hFFFF;
-        energy_mid   = 16'd0;
-        active_video = 1'b1;
-        pixel_x      = 10'd5;   // edge zone (< EDGE_WIDTH=60)
-        pixel_y      = 10'd240;
-        saw_bright   = 1'b0;
-        saw_dark     = 1'b0;
-        for (i = 0; i < 100; i = i + 1) begin
-            @(posedge clk); #1;
-            if (r >= 4'd8 && b >= 4'd15) saw_bright = 1'b1;
-            if (r <= 4'd2 && g <= 4'd2)  saw_dark   = 1'b1;
-        end
-        if (saw_bright && saw_dark)
-            $display("[PASS] Test 5: Edge flashing - saw both bright and dark states");
+        // T5: Particle at cell (5,5) -> color_id=2 -> CYAN
+        drive(10'd86, 10'd86, 1'b1, 16'd0, 16'd0);
+        if (r === 4'd0 && g === 4'd5 && b === 4'd5)
+            $display("[PASS] Test 5: Particle cyan (cell 5,5) - g=5 b=5");
         else begin
-            $display("[FAIL] Test 5: Edge flashing - bright=%0d dark=%0d", saw_bright, saw_dark);
-            fail_count = fail_count + 1;
+            $display("[FAIL] Test 5: r=%0d g=%0d b=%0d (expected 0,5,5)", r, g, b); fail_count = fail_count+1;
         end
 
-        // --- Test 6: With zero treble → very slow flash (period=2_000_000 cycles) ---
-        // Across short window, flash_state should remain stable (no toggle observed)
-        rst_n = 0; repeat (5) @(posedge clk); rst_n = 1;
-        energy_high  = 16'd0;
-        active_video = 1'b1;
-        pixel_x      = 10'd5;
-        pixel_y      = 10'd10;
-        @(posedge clk); #1;
-        begin
-            r_snap = r;
-            // Check that over 1000 cycles, output doesn't change (period >> 1000)
-            repeat (1000) @(posedge clk);
-            #1;
-            if (r === r_snap)
-                $display("[PASS] Test 6: Slow flash - stable over 1000 cycles");
-            else begin
-                $display("[FAIL] Test 6: Slow flash - unexpected change");
-                fail_count = fail_count + 1;
-            end
+        // T6: Particle at cell (6,5) -> color_id=3 -> MAGENTA
+        drive(10'd102, 10'd86, 1'b1, 16'd0, 16'd0);
+        if (r === 4'd5 && g === 4'd0 && b === 4'd5)
+            $display("[PASS] Test 6: Particle magenta (cell 6,5) - r=5 b=5");
+        else begin
+            $display("[FAIL] Test 6: r=%0d g=%0d b=%0d (expected 5,0,5)", r, g, b); fail_count = fail_count+1;
+        end
+
+        // T7: Loud treble brightens red particle
+        drive(10'd54, 10'd86, 1'b1, 16'hF000, 16'd0);
+        if (r === 4'd15 && g === 4'd0 && b === 4'd0)
+            $display("[PASS] Test 7: Loud treble brightens red particle (15,0,0)");
+        else begin
+            $display("[FAIL] Test 7: r=%0d g=%0d b=%0d (expected 15,0,0)", r, g, b); fail_count = fail_count+1;
+        end
+
+        // T8: Non-particle + e_mid=0xE000 -> magenta bg
+        drive(10'd0, 10'd0, 1'b1, 16'd0, 16'hE000);
+        if (r === 4'd7 && g === 4'd0 && b === 4'd7)
+            $display("[PASS] Test 8: Non-particle + mid - magenta bg");
+        else begin
+            $display("[FAIL] Test 8: r=%0d g=%0d b=%0d", r, g, b); fail_count = fail_count+1;
+        end
+
+        // T9: Non-particle + silent -> black
+        drive(10'd0, 10'd0, 1'b1, 16'hFFFF, 16'd0);
+        if (r === 4'd0 && g === 4'd0 && b === 4'd0)
+            $display("[PASS] Test 9: Non-particle + silent - black");
+        else begin
+            $display("[FAIL] Test 9: r=%0d g=%0d b=%0d", r, g, b); fail_count = fail_count+1;
         end
 
         if (fail_count == 0)
-            $display("=== Scene Treble Flash: ALL PASS ===");
+            $display("=== Scene 3 (Multicolor Particle Storm): ALL PASS ===");
         else
-            $display("=== Scene Treble Flash: %0d FAIL(s) ===", fail_count);
+            $display("=== Scene 3: %0d FAIL(s) ===", fail_count);
 
         $finish;
     end

@@ -26,3 +26,29 @@ platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integratio
 platform generate -domains 
 platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integration/reactive_scene_top_ps.xsa}
 platform generate -domains 
+platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integration/reactive_scene_top_ps.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integration/reactive_scene_top_ps.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integration/reactive_scene_top_ps.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integration/reactive_scene_top_ps.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integration/reactive_scene_top_ps.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integration/reactive_scene_top_ps.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integration/reactive_scene_top_ps.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integration/reactive_scene_top_ps.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integration/reactive_scene_top_ps.xsa}
+platform generate -domains 
+platform clean
+platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integration/reactive_scene_top_ps.xsa}
+platform clean
+platform generate
+platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integration/reactive_scene_top_ps.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/khuon/ECE520/final_project/phase3_integration/reactive_scene_top_ps.xsa}
+platform generate -domains 

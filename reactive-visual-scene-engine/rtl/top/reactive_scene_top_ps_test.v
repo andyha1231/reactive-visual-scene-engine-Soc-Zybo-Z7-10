@@ -95,6 +95,9 @@ module reactive_scene_top_ps_test (
     wire        sc_bvalid, sc_bready;
     wire        sc_arvalid, sc_arready, sc_rvalid, sc_rready;
 
+    // Audio streaming wrap pulse from audio_sample_reader -> WRAP_FLAG register.
+    wire        wrap_pulse;
+
     design_1_wrapper u_ps (
         .FCLK_CLK0_0        (fclk_clk0),
 
@@ -173,12 +176,13 @@ module reactive_scene_top_ps_test (
     wire [7:0] axi_sensitivity;
 
     scene_ctrl_v1_0 u_ctrl (
-        .scene_select   (),
-        .preset_select  (),
-        .sensitivity    (axi_sensitivity),
-        .threshold      (),
-        .auto_mode      (),
-        .debug_en       (),
+        .scene_select     (),
+        .preset_select    (),
+        .sensitivity      (axi_sensitivity),
+        .threshold        (),
+        .auto_mode        (),
+        .debug_en         (),
+        .wrap_pulse_async (wrap_pulse),
         .s00_axi_aclk    (fclk_clk0),
         .s00_axi_aresetn (rst_n),
         .s00_axi_awaddr  (sc_awaddr[4:0]),
@@ -216,7 +220,7 @@ module reactive_scene_top_ps_test (
 
     audio_sample_reader #(
         .CLK_FREQ    (125_000_000),
-        .SAMPLE_RATE (22_050),
+        .SAMPLE_RATE (11_025),
         .SAMPLE_COUNT(32768),
         .ADDR_WIDTH  (15)
     ) u_audio (
@@ -227,7 +231,8 @@ module reactive_scene_top_ps_test (
         .bram_dout   (bram_portb_dout[15:0]),
         .bram_en     (bram_en_sig),
         .sample_out  (sample_out),
-        .sample_valid(sample_valid)
+        .sample_valid(sample_valid),
+        .wrap_pulse  (wrap_pulse)
     );
 
     wire [15:0] amplitude, energy_low, energy_mid, energy_high;

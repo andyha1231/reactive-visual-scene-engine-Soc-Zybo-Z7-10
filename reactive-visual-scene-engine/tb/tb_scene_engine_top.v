@@ -64,7 +64,8 @@ module tb_scene_engine_top;
         rst_n        = 0;
         active_video = 0;
         pixel_x      = 0; pixel_y = 0;
-        scene_select = 0; quad_view_en = 0; freeze = 0;
+        scene_select = 0; quad_view_en = 0;
+        freeze       = 1;        // deterministic: anim_cnt held at 0 throughout
         sensitivity  = 8'd255;
         // Drive features so each scene produces a clearly distinct, max output.
         amplitude    = 16'hFFFF;   // scene_loudness_pulse: bright orange center
@@ -92,10 +93,12 @@ module tb_scene_engine_top;
         // the brightest pixel; bass_bars at this y is empty (bar at bottom);
         // treble_flash center has mid-energy glow; tri_band_eq mid band.
 
-        // Test 2: scene 0 (loudness pulse) at center → bright orange (r > 0)
-        settle_pixel(10'd320, 10'd240, 2'd0, 1'b0);
-        if (r > 4'd5)
-            $display("[PASS] Test 2: Single scene 0 - bright pixel at center r=%0d", r);
+        // Test 2: scene 0 (Pulsing Sun) - center pixel with loud amp -> sun core.
+        // mh=1 < sun_r = 30 + amp[15:9] = 30+127 = 157. In sun core.
+        // Output: r=15 g=12 b=2 (yellow-orange).
+        settle_pixel(10'd321, 10'd240, 2'd0, 1'b0);
+        if (r === 4'd15 && g === 4'd12 && b === 4'd2)
+            $display("[PASS] Test 2: Single scene 0 - sun core (15,12,2)");
         else begin
             $display("[FAIL] Test 2: Single scene 0 r=%0d g=%0d b=%0d", r, g, b);
             fail_count = fail_count + 1;
@@ -110,14 +113,12 @@ module tb_scene_engine_top;
             fail_count = fail_count + 1;
         end
 
-        // Test 4: scene 2 (treble_flash) edge zone → flashing pixel pattern
-        // Edge zone: pixel_x < 60. flash_state may be 0 or 1; test for
-        // EITHER bright cyan-ish OR dim edge (both valid edge outputs).
-        settle_pixel(10'd10, 10'd10, 2'd2, 1'b0);
-        // Edge OFF: r=1, g=1, b=2 ; Edge ON: r=8, g=12, b=15
-        if ((r === 4'd1 && g === 4'd1 && b === 4'd2) ||
-            (r === 4'd8 && g === 4'd12 && b === 4'd15))
-            $display("[PASS] Test 4: Single scene 2 - edge zone r=%0d g=%0d b=%0d", r, g, b);
+        // Test 4: scene 2 (Multicolor Particle Storm) - cyan cell with loud treble.
+        // Cell (5, 5) -> color_id=(5+5+0)&3=2 -> CYAN. Pixel (86, 86): cell_phase=10,
+        // tri_b=5. e_high=0xFFFF: sum=5+15=20 -> 15. Output: r=0 g=15 b=15.
+        settle_pixel(10'd86, 10'd86, 2'd2, 1'b0);
+        if (r === 4'd0 && g === 4'd15 && b === 4'd15)
+            $display("[PASS] Test 4: Single scene 2 - cyan particle (0,15,15)");
         else begin
             $display("[FAIL] Test 4: Single scene 2 r=%0d g=%0d b=%0d", r, g, b);
             fail_count = fail_count + 1;
@@ -148,12 +149,12 @@ module tb_scene_engine_top;
         // scene. Verify each quadrant shows the right scene.
         // ===================================================================
 
-        // Test 7: TL quadrant (px<320, py<240): logical (vx=2*px, vy=2*py)
-        // At (px=160, py=120) → vx=320, vy=240 = center of scene 0 (loudness).
-        // Should show bright orange (loudness pulse center).
-        settle_pixel(10'd160, 10'd120, 2'd0, 1'b1);
-        if (r > 4'd5)
-            $display("[PASS] Test 7: Quad TL = scene 0 loudness center r=%0d", r);
+        // Test 7: TL quadrant (px<320, py<240): logical (vx=2*px, vy=2*py).
+        // At (161, 120) -> vx=322, vy=240. mh = 2 < sun_r=157, in sun core.
+        // Output: r=15 g=12 b=2 (yellow-orange).
+        settle_pixel(10'd161, 10'd120, 2'd0, 1'b1);
+        if (r === 4'd15 && g === 4'd12 && b === 4'd2)
+            $display("[PASS] Test 7: Quad TL = scene 0 sun core (15,12,2)");
         else begin
             $display("[FAIL] Test 7: Quad TL r=%0d g=%0d b=%0d", r, g, b);
             fail_count = fail_count + 1;
@@ -176,13 +177,12 @@ module tb_scene_engine_top;
             fail_count = fail_count + 1;
         end
 
-        // Test 9: BL quadrant (px<320, py>=240): scene 2 treble flash
-        // At (px=10, py=300) → vx=20, vy=120 — edge zone of treble (vx<60).
-        settle_pixel(10'd10, 10'd300, 2'd0, 1'b1);
-        // Edge zone — accept either ON or OFF state
-        if ((r === 4'd1 && g === 4'd1 && b === 4'd2) ||
-            (r === 4'd8 && g === 4'd12 && b === 4'd15))
-            $display("[PASS] Test 9: Quad BL = scene 2 treble edge r=%0d g=%0d b=%0d", r, g, b);
+        // Test 9: BL quadrant -> scene 2 (Multicolor Particles).
+        // At (11, 251) -> vx=22, vy=22. Cell (1, 1) -> color_id=(1+1+0)&3=2 -> CYAN.
+        // cell_phase=2, tri_b=1. e_high=0xFFFF: sum=1+15=16 -> 15. Output: r=0 g=15 b=15.
+        settle_pixel(10'd11, 10'd251, 2'd0, 1'b1);
+        if (r === 4'd0 && g === 4'd15 && b === 4'd15)
+            $display("[PASS] Test 9: Quad BL = scene 2 cyan particle (0,15,15)");
         else begin
             $display("[FAIL] Test 9: Quad BL r=%0d g=%0d b=%0d", r, g, b);
             fail_count = fail_count + 1;

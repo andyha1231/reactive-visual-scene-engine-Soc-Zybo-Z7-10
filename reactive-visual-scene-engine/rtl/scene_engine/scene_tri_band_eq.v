@@ -48,11 +48,14 @@ module scene_tri_band_eq (
     end
 
     // -------------------------------------------------------------
-    // Bar width = (band_energy * sensitivity) >> 14, clamped to 640
-    // Same scaling pattern as scene_bass_bars.
+    // Bar width = (band_energy * sensitivity) >> 13, clamped to 640.
+    // Shift tuned for music (real signals weaker than synthetic test tones).
+    // Take 11 bits to preserve MSB; clamp to 640 in the wider domain.
     // -------------------------------------------------------------
-    wire [23:0] scaled    = band_energy * {8'd0, sensitivity};
-    wire [9:0]  bar_width = (scaled[23:14] > SCREEN_W) ? SCREEN_W : scaled[23:14];
+    wire [23:0] scaled         = band_energy * {8'd0, sensitivity};
+    wire [10:0] scaled_shifted = scaled[23:13];
+    wire [9:0]  bar_width;
+    assign bar_width = (scaled_shifted > {1'b0, SCREEN_W}) ? SCREEN_W : scaled_shifted[9:0];
 
     wire in_bar = (pixel_x < bar_width);
 

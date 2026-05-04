@@ -22,13 +22,17 @@ module scene_bass_bars (
     localparam NUM_BARS  = 8;
     localparam SCREEN_H  = 480;
 
-    // Scale energy_low to bar height (0-480)
-    // Use sensitivity to scale: bar_height = (energy_low * sensitivity) >> 8
+    // Scale energy_low to bar height (0-480).
+    // bar_height = (energy_low * sensitivity) >> 13, clamped to 480.
+    // Shift tuned for music: real signals have lower peak energy than the
+    // synthetic test tone, so we amplify (was >>14, now >>13 = 2x more).
     wire [23:0] scaled_energy;
     assign scaled_energy = energy_low * {8'd0, sensitivity};
 
-    wire [9:0] bar_height;
-    assign bar_height = (scaled_energy[23:14] > 10'd480) ? 10'd480 : scaled_energy[23:14];
+    // Take 11 bits (>>13 result up to 2047) so we don't lose the MSB on big values
+    wire [10:0] scaled_shifted = scaled_energy[23:13];
+    wire [9:0]  bar_height;
+    assign bar_height = (scaled_shifted > 11'd480) ? 10'd480 : scaled_shifted[9:0];
 
     // Bar index from pixel_x
     wire [2:0] bar_idx;

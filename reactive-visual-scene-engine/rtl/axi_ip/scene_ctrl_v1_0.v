@@ -17,6 +17,10 @@ module scene_ctrl_v1_0 #(
     output wire        auto_mode,
     output wire        debug_en,
 
+    // Audio-streaming wrap pulse from audio_sample_reader (sys_clk domain).
+    // Synchronized to s00_axi_aclk inside the slave; sets the WRAP_FLAG bit at 0x18.
+    input  wire        wrap_pulse_async,
+
     // AXI4-Lite slave interface
     input  wire                                  s00_axi_aclk,
     input  wire                                  s00_axi_aresetn,
@@ -45,12 +49,13 @@ module scene_ctrl_v1_0 #(
         .C_S_AXI_DATA_WIDTH (C_S00_AXI_DATA_WIDTH),
         .C_S_AXI_ADDR_WIDTH (C_S00_AXI_ADDR_WIDTH)
     ) u_s00_axi (
-        .scene_select  (scene_select),
-        .preset_select (preset_select),
-        .sensitivity   (sensitivity),
-        .threshold     (threshold),
-        .auto_mode     (auto_mode),
-        .debug_en      (debug_en),
+        .scene_select     (scene_select),
+        .preset_select    (preset_select),
+        .sensitivity      (sensitivity),
+        .threshold        (threshold),
+        .auto_mode        (auto_mode),
+        .debug_en         (debug_en),
+        .wrap_pulse_async (wrap_pulse_async),
 
         .S_AXI_ACLK    (s00_axi_aclk),
         .S_AXI_ARESETN (s00_axi_aresetn),

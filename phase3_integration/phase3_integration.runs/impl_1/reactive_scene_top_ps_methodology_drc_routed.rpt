@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Sun May  3 20:02:23 2026
+| Date         : Mon May  4 03:40:34 2026
 | Host         : GN9HD17Q running 64-bit major release  (build 9200)
 | Command      : report_methodology -file reactive_scene_top_ps_methodology_drc_routed.rpt -pb reactive_scene_top_ps_methodology_drc_routed.pb -rpx reactive_scene_top_ps_methodology_drc_routed.rpx
 | Design       : reactive_scene_top_ps
@@ -23,13 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 36
+             Violations found: 37
 +-----------+----------+-------------------------------------------------------------------------------------------------------+------------+
 | Rule      | Severity | Description                                                                                           | Violations |
 +-----------+----------+-------------------------------------------------------------------------------------------------------+------------+
 | DPIR-1    | Warning  | Asynchronous driver check                                                                             | 16         |
 | LUTAR-1   | Warning  | LUT drives async reset alert                                                                          | 1          |
 | TIMING-9  | Warning  | Unknown CDC Logic                                                                                     | 1          |
+| TIMING-10 | Warning  | Missing property on synchronizer                                                                      | 1          |
 | TIMING-18 | Warning  | Missing input or output delay                                                                         | 13         |
 | TIMING-28 | Warning  | Auto-derived clock referenced by a timing constraint                                                  | 2          |
 | TIMING-47 | Warning  | False path, asynchronous clock group or max delay datapath only constraint between synchronous clocks | 1          |
@@ -126,12 +127,17 @@ mid_held_reg[13]/CLR, mid_held_reg[14]/CLR, mid_held_reg[15]/CLR,
 mid_held_reg[1]/CLR, mid_held_reg[2]/CLR, mid_held_reg[3]/CLR,
 mid_held_reg[4]/CLR, mid_held_reg[5]/CLR, mid_held_reg[6]/CLR,
 mid_held_reg[7]/CLR, mid_held_reg[8]/CLR, mid_held_reg[9]/CLR
- (the first 15 of 328 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ (the first 15 of 335 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-9#1 Warning
 Unknown CDC Logic  
 One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
+Related violations: <none>
+
+TIMING-10#1 Warning
+Missing property on synchronizer  
+One or more logic synchronizer has been detected between 2 clock domains but the synchronizer does not have the property ASYNC_REG defined on one or both registers. It is recommended to run report_cdc for a complete and detailed CDC coverage
 Related violations: <none>
 
 TIMING-18#1 Warning
@@ -216,7 +222,7 @@ Related violations: <none>
 
 ULMTCS-1#1 Warning
 Control Sets use limits recommend reduction  
-This design uses 425 control sets (vs. available limit of 4400, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
+This design uses 426 control sets (vs. available limit of 4400, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
 Related violations: <none>
 
 XDCB-5#1 Warning

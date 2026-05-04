@@ -172,3 +172,1028 @@ con
 ----------------End of Script----------------
 
 20:03:52 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+23:35:06 INFO  : Hardware specification for platform project 'zybo_z7_10_plat' is updated.
+23:36:40 INFO  : Result from executing command 'getProjects': zybo_z7_10_plat
+23:36:40 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_202310_1/xilinx_vck190_base_202310_1.xpfm;xilinx_vck190_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_dfx_202310_1/xilinx_vck190_base_dfx_202310_1.xpfm;xilinx_vek280_es1_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vek280_es1_base_202310_1/xilinx_vek280_es1_base_202310_1.xpfm;xilinx_vmk180_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vmk180_base_202310_1/xilinx_vmk180_base_202310_1.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+00:01:15 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+00:01:25 INFO  : Disconnected from the channel tcfchan#7.
+00:01:26 INFO  : The hardware specification used by project 'scene_engine_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+00:01:26 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream\reactive_scene_top_ps.bit' stored in project is removed.
+00:01:26 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream' in project 'scene_engine_app'.
+00:01:26 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit\ps7_init.tcl' stored in project is removed.
+00:01:29 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit' in project 'scene_engine_app'.
+00:01:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:01:29 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+00:01:29 INFO  : 'jtag frequency' command is executed.
+00:01:29 INFO  : Context for 'APU' is selected.
+00:01:29 INFO  : System reset is completed.
+00:01:32 INFO  : 'after 3000' command is executed.
+00:01:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+00:01:33 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+00:01:34 INFO  : Context for 'APU' is selected.
+00:01:34 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+00:01:34 INFO  : 'configparams force-mem-access 1' command is executed.
+00:01:34 INFO  : Context for 'APU' is selected.
+00:01:34 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+00:01:34 INFO  : 'ps7_init' command is executed.
+00:01:34 INFO  : 'ps7_post_config' command is executed.
+00:01:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:01:47 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:01:47 INFO  : 'configparams force-mem-access 0' command is executed.
+00:01:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:01:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:01:47 INFO  : 'con' command is executed.
+00:01:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:01:47 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+00:48:48 INFO  : Hardware specification for platform project 'zybo_z7_10_plat' is updated.
+00:48:54 INFO  : Result from executing command 'getProjects': zybo_z7_10_plat
+00:48:54 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_202310_1/xilinx_vck190_base_202310_1.xpfm;xilinx_vck190_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_dfx_202310_1/xilinx_vck190_base_dfx_202310_1.xpfm;xilinx_vek280_es1_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vek280_es1_base_202310_1/xilinx_vek280_es1_base_202310_1.xpfm;xilinx_vmk180_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vmk180_base_202310_1/xilinx_vmk180_base_202310_1.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+00:48:59 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+00:49:11 INFO  : Disconnected from the channel tcfchan#9.
+00:49:12 INFO  : The hardware specification used by project 'scene_engine_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+00:49:12 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream\reactive_scene_top_ps.bit' stored in project is removed.
+00:49:12 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream' in project 'scene_engine_app'.
+00:49:12 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit\ps7_init.tcl' stored in project is removed.
+00:49:15 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit' in project 'scene_engine_app'.
+00:49:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:49:15 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+00:49:15 INFO  : 'jtag frequency' command is executed.
+00:49:15 INFO  : Context for 'APU' is selected.
+00:49:15 INFO  : System reset is completed.
+00:49:18 INFO  : 'after 3000' command is executed.
+00:49:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+00:49:19 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+00:49:19 INFO  : Context for 'APU' is selected.
+00:49:20 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+00:49:20 INFO  : 'configparams force-mem-access 1' command is executed.
+00:49:20 INFO  : Context for 'APU' is selected.
+00:49:20 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+00:49:20 INFO  : 'ps7_init' command is executed.
+00:49:20 INFO  : 'ps7_post_config' command is executed.
+00:49:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:49:33 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:49:33 INFO  : 'configparams force-mem-access 0' command is executed.
+00:49:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:49:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:49:34 INFO  : 'con' command is executed.
+00:49:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:49:34 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+00:51:54 INFO  : Disconnected from the channel tcfchan#11.
+00:51:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:51:55 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+00:51:55 INFO  : 'jtag frequency' command is executed.
+00:51:55 INFO  : Context for 'APU' is selected.
+00:51:55 INFO  : System reset is completed.
+00:51:58 INFO  : 'after 3000' command is executed.
+00:51:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+00:52:00 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+00:52:00 INFO  : Context for 'APU' is selected.
+00:52:00 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+00:52:00 INFO  : 'configparams force-mem-access 1' command is executed.
+00:52:00 INFO  : Context for 'APU' is selected.
+00:52:00 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+00:52:00 INFO  : 'ps7_init' command is executed.
+00:52:00 INFO  : 'ps7_post_config' command is executed.
+00:52:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:52:13 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:52:13 INFO  : 'configparams force-mem-access 0' command is executed.
+00:52:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:52:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:52:13 INFO  : 'con' command is executed.
+00:52:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:52:13 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+00:52:56 INFO  : Disconnected from the channel tcfchan#12.
+00:52:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:52:57 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+00:52:57 INFO  : 'jtag frequency' command is executed.
+00:52:57 INFO  : Context for 'APU' is selected.
+00:52:57 INFO  : System reset is completed.
+00:53:00 INFO  : 'after 3000' command is executed.
+00:53:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+00:53:01 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+00:53:01 INFO  : Context for 'APU' is selected.
+00:53:01 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+00:53:01 INFO  : 'configparams force-mem-access 1' command is executed.
+00:53:01 INFO  : Context for 'APU' is selected.
+00:53:01 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+00:53:01 INFO  : 'ps7_init' command is executed.
+00:53:01 INFO  : 'ps7_post_config' command is executed.
+00:53:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:53:15 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:53:15 INFO  : 'configparams force-mem-access 0' command is executed.
+00:53:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:53:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:53:15 INFO  : 'con' command is executed.
+00:53:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:53:15 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+00:53:21 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+00:53:28 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+00:53:34 INFO  : Disconnected from the channel tcfchan#13.
+00:53:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:53:35 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+00:53:35 INFO  : 'jtag frequency' command is executed.
+00:53:35 INFO  : Context for 'APU' is selected.
+00:53:35 INFO  : System reset is completed.
+00:53:38 INFO  : 'after 3000' command is executed.
+00:53:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+00:53:39 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+00:53:39 INFO  : Context for 'APU' is selected.
+00:53:39 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+00:53:39 INFO  : 'configparams force-mem-access 1' command is executed.
+00:53:39 INFO  : Context for 'APU' is selected.
+00:53:39 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+00:53:40 INFO  : 'ps7_init' command is executed.
+00:53:40 INFO  : 'ps7_post_config' command is executed.
+00:53:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:53:53 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:53:53 INFO  : 'configparams force-mem-access 0' command is executed.
+00:53:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:53:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:53:53 INFO  : 'con' command is executed.
+00:53:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:53:53 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+01:00:19 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+01:00:25 INFO  : Disconnected from the channel tcfchan#14.
+01:00:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:00:27 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+01:00:27 INFO  : 'jtag frequency' command is executed.
+01:00:27 INFO  : Context for 'APU' is selected.
+01:00:27 INFO  : System reset is completed.
+01:00:30 INFO  : 'after 3000' command is executed.
+01:00:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+01:00:31 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+01:00:31 INFO  : Context for 'APU' is selected.
+01:00:31 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+01:00:31 INFO  : 'configparams force-mem-access 1' command is executed.
+01:00:31 INFO  : Context for 'APU' is selected.
+01:00:31 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+01:00:31 INFO  : 'ps7_init' command is executed.
+01:00:31 INFO  : 'ps7_post_config' command is executed.
+01:00:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:00:45 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:00:45 INFO  : 'configparams force-mem-access 0' command is executed.
+01:00:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:00:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:00:45 INFO  : 'con' command is executed.
+01:00:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:00:45 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+01:01:30 INFO  : Hardware specification for platform project 'zybo_z7_10_plat' is updated.
+01:01:40 INFO  : Result from executing command 'getProjects': zybo_z7_10_plat
+01:01:40 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_202310_1/xilinx_vck190_base_202310_1.xpfm;xilinx_vck190_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_dfx_202310_1/xilinx_vck190_base_dfx_202310_1.xpfm;xilinx_vek280_es1_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vek280_es1_base_202310_1/xilinx_vek280_es1_base_202310_1.xpfm;xilinx_vmk180_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vmk180_base_202310_1/xilinx_vmk180_base_202310_1.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+01:01:48 INFO  : Disconnected from the channel tcfchan#15.
+01:01:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:01:50 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+01:01:50 INFO  : 'jtag frequency' command is executed.
+01:01:50 INFO  : Context for 'APU' is selected.
+01:01:50 INFO  : System reset is completed.
+01:01:53 INFO  : 'after 3000' command is executed.
+01:01:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+01:01:54 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+01:01:54 INFO  : Context for 'APU' is selected.
+01:01:54 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+01:01:54 INFO  : 'configparams force-mem-access 1' command is executed.
+01:01:54 INFO  : Context for 'APU' is selected.
+01:01:54 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+01:01:54 INFO  : 'ps7_init' command is executed.
+01:01:54 INFO  : 'ps7_post_config' command is executed.
+01:01:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:02:07 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:02:08 INFO  : 'configparams force-mem-access 0' command is executed.
+01:02:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:02:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:02:08 INFO  : 'con' command is executed.
+01:02:08 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:02:08 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+01:36:06 INFO  : Hardware specification for platform project 'zybo_z7_10_plat' is updated.
+01:36:20 INFO  : Result from executing command 'getProjects': zybo_z7_10_plat
+01:36:20 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_202310_1/xilinx_vck190_base_202310_1.xpfm;xilinx_vck190_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_dfx_202310_1/xilinx_vck190_base_dfx_202310_1.xpfm;xilinx_vek280_es1_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vek280_es1_base_202310_1/xilinx_vek280_es1_base_202310_1.xpfm;xilinx_vmk180_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vmk180_base_202310_1/xilinx_vmk180_base_202310_1.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+01:36:59 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+01:37:11 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+01:37:18 INFO  : Disconnected from the channel tcfchan#17.
+01:37:19 INFO  : The hardware specification used by project 'scene_engine_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+01:37:19 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream\reactive_scene_top_ps.bit' stored in project is removed.
+01:37:19 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream' in project 'scene_engine_app'.
+01:37:19 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit\ps7_init.tcl' stored in project is removed.
+01:37:22 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit' in project 'scene_engine_app'.
+01:37:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:37:23 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+01:37:23 INFO  : 'jtag frequency' command is executed.
+01:37:23 INFO  : Context for 'APU' is selected.
+01:37:23 INFO  : System reset is completed.
+01:37:26 INFO  : 'after 3000' command is executed.
+01:37:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+01:37:27 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+01:37:27 INFO  : Context for 'APU' is selected.
+01:37:27 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+01:37:27 INFO  : 'configparams force-mem-access 1' command is executed.
+01:37:27 INFO  : Context for 'APU' is selected.
+01:37:27 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+01:37:27 INFO  : 'ps7_init' command is executed.
+01:37:27 INFO  : 'ps7_post_config' command is executed.
+01:37:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:37:41 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:37:41 INFO  : 'configparams force-mem-access 0' command is executed.
+01:37:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:37:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:37:41 INFO  : 'con' command is executed.
+01:37:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:37:41 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+01:49:59 INFO  : Disconnected from the channel tcfchan#19.
+01:50:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:50:01 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+01:50:01 INFO  : 'jtag frequency' command is executed.
+01:50:01 INFO  : Context for 'APU' is selected.
+01:50:01 INFO  : System reset is completed.
+01:50:04 INFO  : 'after 3000' command is executed.
+01:50:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+01:50:05 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+01:50:05 INFO  : Context for 'APU' is selected.
+01:50:05 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+01:50:05 INFO  : 'configparams force-mem-access 1' command is executed.
+01:50:05 INFO  : Context for 'APU' is selected.
+01:50:05 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+01:50:05 INFO  : 'ps7_init' command is executed.
+01:50:05 INFO  : 'ps7_post_config' command is executed.
+01:50:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:50:19 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:50:19 INFO  : 'configparams force-mem-access 0' command is executed.
+01:50:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:50:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:50:19 INFO  : 'con' command is executed.
+01:50:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:50:19 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+02:05:31 INFO  : Hardware specification for platform project 'zybo_z7_10_plat' is updated.
+02:06:03 INFO  : Result from executing command 'getProjects': zybo_z7_10_plat
+02:06:03 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_202310_1/xilinx_vck190_base_202310_1.xpfm;xilinx_vck190_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_dfx_202310_1/xilinx_vck190_base_dfx_202310_1.xpfm;xilinx_vek280_es1_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vek280_es1_base_202310_1/xilinx_vek280_es1_base_202310_1.xpfm;xilinx_vmk180_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vmk180_base_202310_1/xilinx_vmk180_base_202310_1.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+02:06:17 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+02:06:25 INFO  : The hardware specification used by project 'scene_engine_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+02:06:25 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream\reactive_scene_top_ps.bit' stored in project is removed.
+02:06:25 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream' in project 'scene_engine_app'.
+02:06:25 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit\ps7_init.tcl' stored in project is removed.
+02:06:29 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit' in project 'scene_engine_app'.
+02:06:39 INFO  : Disconnected from the channel tcfchan#20.
+02:06:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:06:40 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+02:06:40 INFO  : 'jtag frequency' command is executed.
+02:06:40 INFO  : Context for 'APU' is selected.
+02:06:40 INFO  : System reset is completed.
+02:06:43 INFO  : 'after 3000' command is executed.
+02:06:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+02:06:44 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+02:06:44 INFO  : Context for 'APU' is selected.
+02:06:44 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+02:06:44 INFO  : 'configparams force-mem-access 1' command is executed.
+02:06:44 INFO  : Context for 'APU' is selected.
+02:06:44 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+02:06:44 INFO  : 'ps7_init' command is executed.
+02:06:44 INFO  : 'ps7_post_config' command is executed.
+02:06:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:06:58 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:06:58 INFO  : 'configparams force-mem-access 0' command is executed.
+02:06:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:06:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:06:58 INFO  : 'con' command is executed.
+02:06:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:06:58 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+02:20:06 INFO  : Hardware specification for platform project 'zybo_z7_10_plat' is updated.
+02:20:14 INFO  : Result from executing command 'getProjects': zybo_z7_10_plat
+02:20:14 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_202310_1/xilinx_vck190_base_202310_1.xpfm;xilinx_vck190_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_dfx_202310_1/xilinx_vck190_base_dfx_202310_1.xpfm;xilinx_vek280_es1_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vek280_es1_base_202310_1/xilinx_vek280_es1_base_202310_1.xpfm;xilinx_vmk180_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vmk180_base_202310_1/xilinx_vmk180_base_202310_1.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+02:20:18 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+02:20:30 INFO  : Disconnected from the channel tcfchan#23.
+02:20:31 INFO  : The hardware specification used by project 'scene_engine_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+02:20:31 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream\reactive_scene_top_ps.bit' stored in project is removed.
+02:20:31 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream' in project 'scene_engine_app'.
+02:20:31 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit\ps7_init.tcl' stored in project is removed.
+02:20:35 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit' in project 'scene_engine_app'.
+02:20:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:20:35 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+02:20:35 INFO  : 'jtag frequency' command is executed.
+02:20:35 INFO  : Context for 'APU' is selected.
+02:20:35 INFO  : System reset is completed.
+02:20:38 INFO  : 'after 3000' command is executed.
+02:20:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+02:20:40 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+02:20:40 INFO  : Context for 'APU' is selected.
+02:20:40 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+02:20:40 INFO  : 'configparams force-mem-access 1' command is executed.
+02:20:40 INFO  : Context for 'APU' is selected.
+02:20:40 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+02:20:40 INFO  : 'ps7_init' command is executed.
+02:20:40 INFO  : 'ps7_post_config' command is executed.
+02:20:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:20:53 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:20:53 INFO  : 'configparams force-mem-access 0' command is executed.
+02:20:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:20:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:20:53 INFO  : 'con' command is executed.
+02:20:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:20:53 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+02:45:17 INFO  : Hardware specification for platform project 'zybo_z7_10_plat' is updated.
+02:45:26 INFO  : Result from executing command 'getProjects': zybo_z7_10_plat
+02:45:26 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_202310_1/xilinx_vck190_base_202310_1.xpfm;xilinx_vck190_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_dfx_202310_1/xilinx_vck190_base_dfx_202310_1.xpfm;xilinx_vek280_es1_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vek280_es1_base_202310_1/xilinx_vek280_es1_base_202310_1.xpfm;xilinx_vmk180_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vmk180_base_202310_1/xilinx_vmk180_base_202310_1.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+02:45:36 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+02:47:16 INFO  : Disconnected from the channel tcfchan#25.
+02:47:17 INFO  : The hardware specification used by project 'scene_engine_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+02:47:17 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream\reactive_scene_top_ps.bit' stored in project is removed.
+02:47:17 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream' in project 'scene_engine_app'.
+02:47:17 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit\ps7_init.tcl' stored in project is removed.
+02:47:20 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit' in project 'scene_engine_app'.
+02:47:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:47:21 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+02:47:21 INFO  : 'jtag frequency' command is executed.
+02:47:21 INFO  : Context for 'APU' is selected.
+02:47:21 INFO  : System reset is completed.
+02:47:24 INFO  : 'after 3000' command is executed.
+02:47:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+02:47:25 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+02:47:25 INFO  : Context for 'APU' is selected.
+02:47:25 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+02:47:25 INFO  : 'configparams force-mem-access 1' command is executed.
+02:47:25 INFO  : Context for 'APU' is selected.
+02:47:25 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+02:47:25 INFO  : 'ps7_init' command is executed.
+02:47:25 INFO  : 'ps7_post_config' command is executed.
+02:47:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:47:39 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:47:39 INFO  : 'configparams force-mem-access 0' command is executed.
+02:47:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:47:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:47:39 INFO  : 'con' command is executed.
+02:47:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:47:39 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+02:48:49 INFO  : Disconnected from the channel tcfchan#27.
+02:48:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:48:50 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+02:48:50 INFO  : 'jtag frequency' command is executed.
+02:48:50 INFO  : Context for 'APU' is selected.
+02:48:50 INFO  : System reset is completed.
+02:48:53 INFO  : 'after 3000' command is executed.
+02:48:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+02:48:54 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+02:48:54 INFO  : Context for 'APU' is selected.
+02:48:54 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+02:48:54 INFO  : 'configparams force-mem-access 1' command is executed.
+02:48:54 INFO  : Context for 'APU' is selected.
+02:48:54 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+02:48:54 INFO  : 'ps7_init' command is executed.
+02:48:54 INFO  : 'ps7_post_config' command is executed.
+02:48:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:49:08 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:49:08 INFO  : 'configparams force-mem-access 0' command is executed.
+02:49:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:49:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:49:08 INFO  : 'con' command is executed.
+02:49:08 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:49:08 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+03:14:19 INFO  : Hardware specification for platform project 'zybo_z7_10_plat' is updated.
+03:14:29 INFO  : Result from executing command 'getProjects': zybo_z7_10_plat
+03:14:29 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_202310_1/xilinx_vck190_base_202310_1.xpfm;xilinx_vck190_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_dfx_202310_1/xilinx_vck190_base_dfx_202310_1.xpfm;xilinx_vek280_es1_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vek280_es1_base_202310_1/xilinx_vek280_es1_base_202310_1.xpfm;xilinx_vmk180_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vmk180_base_202310_1/xilinx_vmk180_base_202310_1.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+03:14:41 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+03:15:25 INFO  : Disconnected from the channel tcfchan#28.
+03:15:26 INFO  : The hardware specification used by project 'scene_engine_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+03:15:26 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream\reactive_scene_top_ps.bit' stored in project is removed.
+03:15:26 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream' in project 'scene_engine_app'.
+03:15:26 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit\ps7_init.tcl' stored in project is removed.
+03:15:30 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit' in project 'scene_engine_app'.
+03:15:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:15:30 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+03:15:30 INFO  : 'jtag frequency' command is executed.
+03:15:30 INFO  : Context for 'APU' is selected.
+03:15:30 INFO  : System reset is completed.
+03:15:33 INFO  : 'after 3000' command is executed.
+03:15:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+03:15:34 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+03:15:34 INFO  : Context for 'APU' is selected.
+03:15:34 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+03:15:34 INFO  : 'configparams force-mem-access 1' command is executed.
+03:15:34 INFO  : Context for 'APU' is selected.
+03:15:34 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+03:15:35 INFO  : 'ps7_init' command is executed.
+03:15:35 INFO  : 'ps7_post_config' command is executed.
+03:15:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:15:48 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:15:48 INFO  : 'configparams force-mem-access 0' command is executed.
+03:15:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:15:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:15:48 INFO  : 'con' command is executed.
+03:15:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+03:15:48 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+03:16:17 INFO  : Disconnected from the channel tcfchan#30.
+03:16:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:16:18 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+03:16:18 INFO  : 'jtag frequency' command is executed.
+03:16:18 INFO  : Context for 'APU' is selected.
+03:16:18 INFO  : System reset is completed.
+03:16:21 INFO  : 'after 3000' command is executed.
+03:16:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+03:16:22 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+03:16:22 INFO  : Context for 'APU' is selected.
+03:16:22 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+03:16:22 INFO  : 'configparams force-mem-access 1' command is executed.
+03:16:22 INFO  : Context for 'APU' is selected.
+03:16:22 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+03:16:23 INFO  : 'ps7_init' command is executed.
+03:16:23 INFO  : 'ps7_post_config' command is executed.
+03:16:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:16:36 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:16:36 INFO  : 'configparams force-mem-access 0' command is executed.
+03:16:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:16:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:16:36 INFO  : 'con' command is executed.
+03:16:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+03:16:36 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+03:21:39 INFO  : Hardware specification for platform project 'zybo_z7_10_plat' is updated.
+03:21:50 INFO  : Result from executing command 'getProjects': zybo_z7_10_plat
+03:21:50 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_202310_1/xilinx_vck190_base_202310_1.xpfm;xilinx_vck190_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_dfx_202310_1/xilinx_vck190_base_dfx_202310_1.xpfm;xilinx_vek280_es1_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vek280_es1_base_202310_1/xilinx_vek280_es1_base_202310_1.xpfm;xilinx_vmk180_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vmk180_base_202310_1/xilinx_vmk180_base_202310_1.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+03:22:03 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+03:22:30 INFO  : Disconnected from the channel tcfchan#31.
+03:22:31 INFO  : The hardware specification used by project 'scene_engine_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+03:22:31 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream\reactive_scene_top_ps.bit' stored in project is removed.
+03:22:31 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream' in project 'scene_engine_app'.
+03:22:31 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit\ps7_init.tcl' stored in project is removed.
+03:22:35 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit' in project 'scene_engine_app'.
+03:22:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:22:35 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+03:22:35 INFO  : 'jtag frequency' command is executed.
+03:22:35 INFO  : Context for 'APU' is selected.
+03:22:36 INFO  : System reset is completed.
+03:22:39 INFO  : 'after 3000' command is executed.
+03:22:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+03:22:40 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+03:22:40 INFO  : Context for 'APU' is selected.
+03:22:40 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+03:22:40 INFO  : 'configparams force-mem-access 1' command is executed.
+03:22:40 INFO  : Context for 'APU' is selected.
+03:22:40 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+03:22:40 INFO  : 'ps7_init' command is executed.
+03:22:40 INFO  : 'ps7_post_config' command is executed.
+03:22:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:22:53 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:22:53 INFO  : 'configparams force-mem-access 0' command is executed.
+03:22:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:22:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:22:53 INFO  : 'con' command is executed.
+03:22:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+03:22:53 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+03:25:02 INFO  : Result from executing command 'removePlatformRepo': 
+03:25:13 INFO  : Hardware specification for platform project 'zybo_z7_10_plat' is updated.
+03:25:20 ERROR : Error from executing command 'removePlatformRepo': ERROR: No valid directory exists at given path.
+03:25:45 INFO  : Result from executing command 'getProjects': zybo_z7_10_plat
+03:25:45 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_202310_1/xilinx_vck190_base_202310_1.xpfm;xilinx_vck190_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_dfx_202310_1/xilinx_vck190_base_dfx_202310_1.xpfm;xilinx_vek280_es1_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vek280_es1_base_202310_1/xilinx_vek280_es1_base_202310_1.xpfm;xilinx_vmk180_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vmk180_base_202310_1/xilinx_vmk180_base_202310_1.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+03:26:09 INFO  : Hardware specification for platform project 'zybo_z7_10_plat' is updated.
+03:26:17 INFO  : Result from executing command 'getProjects': zybo_z7_10_plat
+03:26:17 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_202310_1/xilinx_vck190_base_202310_1.xpfm;xilinx_vck190_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_dfx_202310_1/xilinx_vck190_base_dfx_202310_1.xpfm;xilinx_vek280_es1_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vek280_es1_base_202310_1/xilinx_vek280_es1_base_202310_1.xpfm;xilinx_vmk180_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vmk180_base_202310_1/xilinx_vmk180_base_202310_1.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+03:26:22 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+03:26:39 INFO  : Disconnected from the channel tcfchan#33.
+03:26:40 INFO  : The hardware specification used by project 'scene_engine_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+03:26:40 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream\reactive_scene_top_ps.bit' stored in project is removed.
+03:26:40 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream' in project 'scene_engine_app'.
+03:26:40 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit\ps7_init.tcl' stored in project is removed.
+03:26:44 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit' in project 'scene_engine_app'.
+03:26:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:26:45 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+03:26:45 INFO  : 'jtag frequency' command is executed.
+03:26:45 INFO  : Context for 'APU' is selected.
+03:26:45 INFO  : System reset is completed.
+03:26:48 INFO  : 'after 3000' command is executed.
+03:26:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+03:26:49 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+03:26:49 INFO  : Context for 'APU' is selected.
+03:26:49 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+03:26:49 INFO  : 'configparams force-mem-access 1' command is executed.
+03:26:49 INFO  : Context for 'APU' is selected.
+03:26:49 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+03:26:49 INFO  : 'ps7_init' command is executed.
+03:26:49 INFO  : 'ps7_post_config' command is executed.
+03:26:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:27:03 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:27:03 INFO  : 'configparams force-mem-access 0' command is executed.
+03:27:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:27:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:27:03 INFO  : 'con' command is executed.
+03:27:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+03:27:03 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+03:42:11 INFO  : Hardware specification for platform project 'zybo_z7_10_plat' is updated.
+03:42:51 INFO  : Result from executing command 'getProjects': zybo_z7_10_plat
+03:42:51 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_202310_1/xilinx_vck190_base_202310_1.xpfm;xilinx_vck190_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vck190_base_dfx_202310_1/xilinx_vck190_base_dfx_202310_1.xpfm;xilinx_vek280_es1_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vek280_es1_base_202310_1/xilinx_vek280_es1_base_202310_1.xpfm;xilinx_vmk180_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_vmk180_base_202310_1/xilinx_vmk180_base_202310_1.xpfm;xilinx_zcu102_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|C:/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+03:42:55 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+03:43:11 INFO  : Disconnected from the channel tcfchan#38.
+03:43:12 INFO  : The hardware specification used by project 'scene_engine_app' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+03:43:12 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream\reactive_scene_top_ps.bit' stored in project is removed.
+03:43:12 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\bitstream' in project 'scene_engine_app'.
+03:43:12 INFO  : The file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit\ps7_init.tcl' stored in project is removed.
+03:43:17 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app\_ide\psinit' in project 'scene_engine_app'.
+03:43:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:43:17 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+03:43:17 INFO  : 'jtag frequency' command is executed.
+03:43:17 INFO  : Context for 'APU' is selected.
+03:43:17 INFO  : System reset is completed.
+03:43:20 INFO  : 'after 3000' command is executed.
+03:43:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+03:43:22 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+03:43:22 INFO  : Context for 'APU' is selected.
+03:43:22 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+03:43:22 INFO  : 'configparams force-mem-access 1' command is executed.
+03:43:22 INFO  : Context for 'APU' is selected.
+03:43:22 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+03:43:22 INFO  : 'ps7_init' command is executed.
+03:43:22 INFO  : 'ps7_post_config' command is executed.
+03:43:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:43:35 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:43:35 INFO  : 'configparams force-mem-access 0' command is executed.
+03:43:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:43:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:43:36 INFO  : 'con' command is executed.
+03:43:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+03:43:36 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+03:43:56 INFO  : Disconnected from the channel tcfchan#40.
+03:43:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:43:57 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+03:43:57 INFO  : 'jtag frequency' command is executed.
+03:43:57 INFO  : Context for 'APU' is selected.
+03:43:57 INFO  : System reset is completed.
+03:44:00 INFO  : 'after 3000' command is executed.
+03:44:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+03:44:01 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+03:44:01 INFO  : Context for 'APU' is selected.
+03:44:01 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+03:44:01 INFO  : 'configparams force-mem-access 1' command is executed.
+03:44:01 INFO  : Context for 'APU' is selected.
+03:44:01 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+03:44:02 INFO  : 'ps7_init' command is executed.
+03:44:02 INFO  : 'ps7_post_config' command is executed.
+03:44:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:44:15 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:44:15 INFO  : 'configparams force-mem-access 0' command is executed.
+03:44:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:44:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:44:15 INFO  : 'con' command is executed.
+03:44:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+03:44:15 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+03:52:38 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+03:52:46 INFO  : Checking for BSP changes to sync application flags for project 'scene_engine_app'...
+03:52:57 INFO  : Disconnected from the channel tcfchan#41.
+03:52:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:52:58 INFO  : Jtag cable 'Digilent Zybo Z7 210351BE7B1CA' is selected.
+03:52:58 INFO  : 'jtag frequency' command is executed.
+03:52:58 INFO  : Context for 'APU' is selected.
+03:52:58 INFO  : System reset is completed.
+03:53:01 INFO  : 'after 3000' command is executed.
+03:53:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}' command is executed.
+03:53:03 INFO  : Device configured successfully with "C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit"
+03:53:03 INFO  : Context for 'APU' is selected.
+03:53:03 INFO  : Hardware design and registers information is loaded from 'C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa'.
+03:53:03 INFO  : 'configparams force-mem-access 1' command is executed.
+03:53:03 INFO  : Context for 'APU' is selected.
+03:53:03 INFO  : Sourcing of 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl' is done.
+03:53:03 INFO  : 'ps7_init' command is executed.
+03:53:03 INFO  : 'ps7_post_config' command is executed.
+03:53:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:53:17 INFO  : The application 'C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:53:17 INFO  : 'configparams force-mem-access 0' command is executed.
+03:53:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BE7B1CA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BE7B1CA-13722093-0"}
+fpga -file C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/bitstream/reactive_scene_top_ps.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/khuon/ECE520/final_project/vitis_application/zybo_z7_10_plat/export/zybo_z7_10_plat/hw/reactive_scene_top_ps.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/khuon/ECE520/final_project/vitis_application/scene_engine_app/Debug/scene_engine_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:53:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:53:17 INFO  : 'con' command is executed.
+03:53:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+03:53:17 INFO  : Launch script is exported to file 'C:\Users\khuon\ECE520\final_project\vitis_application\scene_engine_app_system\_ide\scripts\debugger_scene_engine_app-default.tcl'
+04:17:31 INFO  : Disconnected from the channel tcfchan#43.

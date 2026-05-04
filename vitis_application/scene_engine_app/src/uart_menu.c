@@ -2,12 +2,16 @@
  * uart_menu.c
  * UART terminal menu for the Reactive Scene Engine (115200 baud).
  *
- * Under the current HW-driven design:
- *   - Scene / quad / freeze are PL switches (sw[3:0]); software cannot drive them.
- *   - Sensitivity (AXI register 0x43C00008) is the only knob software controls.
- *   - This menu therefore only exposes sensitivity + status; commands that
- *     would write SCENE_SEL/PRESET/THRESHOLD have been removed because the
- *     RTL ignores those registers.
+ * Commands (current HW-driven design + streaming):
+ *   1 - Set sensitivity (0-9 -> 0-252)
+ *   2 - Show current status (incl. HW switches + song progress)
+ *   3 - Reset sensitivity to default (128)
+ *   4 - Restart song from chunk 0
+ *   5 - Toggle loop mode (loop forever vs. play once)
+ *   6 - Toggle pause
+ *   h - Show menu
+ *
+ * Display modes (scene/quad/freeze) are PL switches; not in this menu.
  */
 
 #include "xil_printf.h"
@@ -17,9 +21,10 @@
 #include "scene_ctrl.h"
 #include "scene_ctrl_regs.h"
 #include "button_handler.h"
+#include "audio_streamer.h"
 
 static XUartPs uart_inst;
-static int uart_initialized = 0;
+static int     uart_initialized = 0;
 
 static int uart_init(void) {
     XUartPs_Config *cfg;
@@ -61,6 +66,10 @@ void uart_menu_show(void) {
     xil_printf("  1 - Set sensitivity (0-9 -> 0-252)\r\n");
     xil_printf("  2 - Show current status\r\n");
     xil_printf("  3 - Reset sensitivity to default (128)\r\n");
+    xil_printf("  4 - Restart song\r\n");
+    xil_printf("  5 - Toggle loop mode\r\n");
+    xil_printf("  6 - Toggle pause\r\n");
+    xil_printf("  s - Silence (zero BRAM + pause)\r\n");
     xil_printf("  h - Show this menu\r\n");
     xil_printf("\r\n");
     xil_printf("  Note: scene/quad/freeze are PL switches:\r\n");
@@ -92,10 +101,19 @@ void uart_menu_process(void) {
         }
         case '2': {
             scene_status_t st = scene_ctrl_get_status();
-            u8 hw_scene    = button_handler_read_scene_switches();
+            u8  hw_scene = button_handler_read_scene_switches();
+            u32 chunk    = audio_streamer_current_chunk();
+            u32 total    = audio_streamer_total_chunks();
             xil_printf("\r\n--- Current Status ---\r\n");
             xil_printf("  HW scene (sw[1:0]): %s (%d)\r\n", scene_name(hw_scene), hw_scene);
             xil_printf("  Sensitivity (AXI): %d\r\n", st.sensitivity);
+            xil_printf("  Song chunk:        %u of %u\r\n",
+                       (unsigned)(chunk + 1), (unsigned)total);
+            xil_printf("  Loop mode:         %s\r\n",
+                       audio_streamer_get_loop() ? "ON" : "OFF (play once)");
+            xil_printf("  Playback:          %s%s\r\n",
+                       audio_streamer_is_paused()   ? "PAUSED" : "PLAYING",
+                       audio_streamer_is_finished() ? " (finished)" : "");
             xil_printf("  Note: sw[2] (quad) and sw[3] (freeze) are PL-only;\r\n");
             xil_printf("        not visible to PS (BD pads sw[3:2] as 0 into GPIO).\r\n");
             xil_printf("----------------------\r\n");
@@ -104,6 +122,34 @@ void uart_menu_process(void) {
         case '3':
             scene_ctrl_set_sensitivity(DEFAULT_SENSITIVITY);
             xil_printf("\r\nSensitivity reset to default (%d).\r\n", DEFAULT_SENSITIVITY);
+            break;
+        case '4':
+            audio_streamer_restart();
+            xil_printf("\r\nSong restarted from chunk 0.\r\n");
+            break;
+        case '5': {
+            u8 new_loop = audio_streamer_get_loop() ? 0 : 1;
+            audio_streamer_set_loop(new_loop);
+            xil_printf("\r\nLoop mode: %s\r\n", new_loop ? "ON" : "OFF (play once)");
+            break;
+        }
+        case '6': {
+            u8 new_pause = audio_streamer_is_paused() ? 0 : 1;
+            audio_streamer_set_paused(new_pause);
+            xil_printf("\r\nPlayback: %s\r\n", new_pause ? "PAUSED" : "RESUMED");
+            break;
+        }
+        case 's':
+        case 'S':
+            audio_streamer_silence();
+            xil_printf("\r\nSilence: BRAM zeroed, streamer paused. Press G to restart.\r\n");
+            break;
+        case 'G':
+        case 'g':
+            /* Re-init streamer (handles re-running play_demo.ps1 after silence
+             * without requiring a board reset). */
+            audio_streamer_init();
+            xil_printf("\r\nStreamer restarted from chunk 0 (G).\r\n");
             break;
         case 'h':
         case 'H':

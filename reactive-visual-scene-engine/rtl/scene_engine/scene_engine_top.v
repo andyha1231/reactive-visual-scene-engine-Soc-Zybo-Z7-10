@@ -71,6 +71,7 @@ module scene_engine_top (
         .amplitude(amplitude), .energy_low(energy_low),
         .energy_mid(energy_mid), .energy_high(energy_high),
         .sensitivity(sensitivity),
+        .freeze(freeze),
         .r(s1_r), .g(s1_g), .b(s1_b)
     );
 
