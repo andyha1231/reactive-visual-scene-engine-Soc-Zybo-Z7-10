@@ -1,7 +1,7 @@
 # Reactive Visual Scene Engine
 
 **ECE 520 Final Project**  
-**Team:** Andy Ha and Macy Varga
+**Team:** Andy Ha and Macy Varga  
 **Board:** Digilent Zybo Z7-10  
 **SoC:** Xilinx Zynq-7010, xc7z010clg400-1  
 **Toolchain:** Vivado 2023.1, Vitis 2023.1, Python 3  
