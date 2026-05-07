@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../reactive-visual-scene-engine/rtl/scene_engine/scene_bass_bars.v" \
+"../../../../../reactive-visual-scene-engine/rtl/scene_engine/scene_loudness_pulse.v" \
+"../../../../../reactive-visual-scene-engine/rtl/scene_engine/scene_treble_flash.v" \
+"../../../../../reactive-visual-scene-engine/rtl/scene_engine/scene_engine_top.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

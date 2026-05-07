@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1777720993">
   <File Type="PA-TCL" Name="scene_engine_top.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="scene_engine_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="scene_engine_top_reports.tcl"/>
   <File Type="RDS-RDS" Name="scene_engine_top.vds"/>
   <File Type="RDS-UTIL" Name="scene_engine_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="scene_engine_top_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="scene_engine_top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="scene_engine_top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="scene_engine_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../reactive-visual-scene-engine/rtl/scene_engine/scene_bass_bars.v">

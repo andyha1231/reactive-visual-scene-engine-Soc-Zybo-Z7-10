@@ -4,67 +4,60 @@
   <File Type="PA-TCL" Name="reactive_scene_top_ps.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="reactive_scene_top_ps_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="reactive_scene_top_ps_reports.tcl"/>
-  <File Type="OPT-RQA-PB" Name="reactive_scene_top_ps_rqa_opted.pb"/>
+  <File Type="BITSTR-MSK" Name="reactive_scene_top_ps.msk"/>
+  <File Type="ROUTE-CLK" Name="reactive_scene_top_ps_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="reactive_scene_top_ps.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="reactive_scene_top_ps_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="reactive_scene_top_ps.bit"/>
+  <File Type="BG-DRC" Name="reactive_scene_top_ps.drc"/>
+  <File Type="BG-BGN" Name="reactive_scene_top_ps.bgn"/>
+  <File Type="BG-BIN" Name="reactive_scene_top_ps.bin"/>
+  <File Type="BITSTR-RBT" Name="reactive_scene_top_ps.rbt"/>
+  <File Type="BITSTR-NKY" Name="reactive_scene_top_ps.nky"/>
+  <File Type="BITSTR-BMM" Name="reactive_scene_top_ps_bd.bmm"/>
   <File Type="BITSTR-MMI" Name="reactive_scene_top_ps.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="reactive_scene_top_ps_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="reactive_scene_top_ps_timing_summary_init.rpt"/>
-  <File Type="OPT-TIMING" Name="reactive_scene_top_ps_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="reactive_scene_top_ps_opt.dcp"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="reactive_scene_top_ps_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-SYSDEF" Name="reactive_scene_top_ps.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="reactive_scene_top_ps.ltx"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="OPT-DRC" Name="reactive_scene_top_ps_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="reactive_scene_top_ps.hwdef"/>
-  <File Type="PWROPT-DCP" Name="reactive_scene_top_ps_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="reactive_scene_top_ps_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="reactive_scene_top_ps_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="reactive_scene_top_ps_placed.dcp"/>
   <File Type="PLACE-IO" Name="reactive_scene_top_ps_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="reactive_scene_top_ps_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="reactive_scene_top_ps_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="reactive_scene_top_ps_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="reactive_scene_top_ps_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="reactive_scene_top_ps_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="reactive_scene_top_ps_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="reactive_scene_top_ps.bin"/>
-  <File Type="PLACE-TIMING" Name="reactive_scene_top_ps_timing_summary_placed.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="reactive_scene_top_ps_power_routed.rpx"/>
-  <File Type="PLACE-RQA-PB" Name="reactive_scene_top_ps_rqa_placed.pb"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="reactive_scene_top_ps_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="reactive_scene_top_ps.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="reactive_scene_top_ps_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="reactive_scene_top_ps_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="reactive_scene_top_ps_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="reactive_scene_top_ps.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="reactive_scene_top_ps_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="reactive_scene_top_ps_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="reactive_scene_top_ps_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="reactive_scene_top_ps_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="reactive_scene_top_ps_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="reactive_scene_top_ps_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="reactive_scene_top_ps_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="reactive_scene_top_ps_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="reactive_scene_top_ps_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="reactive_scene_top_ps_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-RQS-PB" Name="reactive_scene_top_ps_rqs_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="reactive_scene_top_ps_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="reactive_scene_top_ps_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="reactive_scene_top_ps_route_status.pb"/>
+  <File Type="ROUTE-DCP" Name="reactive_scene_top_ps_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="reactive_scene_top_ps_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="reactive_scene_top_ps_routed_bb.dcp"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="reactive_scene_top_ps_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="reactive_scene_top_ps_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="reactive_scene_top_ps_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="reactive_scene_top_ps_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="reactive_scene_top_ps_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="reactive_scene_top_ps_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="reactive_scene_top_ps_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="reactive_scene_top_ps_bus_skew_routed.rpx"/>
+  <File Type="OPT-DCP" Name="reactive_scene_top_ps_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="reactive_scene_top_ps_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="reactive_scene_top_ps_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="reactive_scene_top_ps_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="reactive_scene_top_ps_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="reactive_scene_top_ps_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="reactive_scene_top_ps_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING" Name="reactive_scene_top_ps_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="reactive_scene_top_ps_timing_summary_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="reactive_scene_top_ps_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="reactive_scene_top_ps_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="reactive_scene_top_ps.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="reactive_scene_top_ps_bus_skew_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="reactive_scene_top_ps_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="reactive_scene_top_ps.nky"/>
-  <File Type="BITSTR-BMM" Name="reactive_scene_top_ps_bd.bmm"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="reactive_scene_top_ps_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="reactive_scene_top_ps_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="reactive_scene_top_ps_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="reactive_scene_top_ps.pdi"/>
   <File Type="BOOT-PDI-FILE" Name="reactive_scene_top_ps_soc.pdi"/>
   <File Type="PL-PDI-FILE" Name="reactive_scene_top_ps_pld.pdi"/>
@@ -73,13 +66,6 @@
   <File Type="RNPI_FILE" Name="reactive_scene_top_ps.rnpi"/>
   <File Type="NPI_FILE" Name="reactive_scene_top_ps.npi"/>
   <File Type="RBD_FILE" Name="reactive_scene_top_ps.rbd"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="reactive_scene_top_ps.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="reactive_scene_top_ps.sysdef"/>
-  <File Type="BG-BGN" Name="reactive_scene_top_ps.bgn"/>
-  <File Type="BG-DRC" Name="reactive_scene_top_ps.drc"/>
-  <File Type="RDI-RDI" Name="reactive_scene_top_ps.vdi"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="ROUTE-RQS" Name="reactive_scene_top_ps_routed.rqs"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="reactive_scene_top_ps_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
@@ -258,11 +244,12 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_bram_ctrl_0_bram_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="rgb2dvi_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_bram_ctrl_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_bram_ctrl_0_bram_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_proc_sys_reset_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_bram_ctrl_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_1"/>
 </GenRun>

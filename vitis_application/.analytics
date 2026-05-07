@@ -43,3 +43,6 @@ timestamp=[2026-05-04 03:43:03], mode=BUILD, duration=0:00:06.437, duration_ms=6
 timestamp=[2026-05-04 03:52:38], mode=BUILD, duration=0:00:00.237, duration_ms=237, data={name=scene_engine_app, configuration=Debug, clean_build=false}
 timestamp=[2026-05-04 03:52:46], mode=BUILD, duration=0:00:00.232, duration_ms=232, data={name=scene_engine_app, configuration=Debug, clean_build=false}
 timestamp=[2026-05-04 03:52:51], mode=BUILD, duration=0:00:04.302, duration_ms=4302, data={name=scene_engine_app_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-04 14:40:51], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.883, duration_ms=883, data={}
+timestamp=[2026-05-04 14:41:03], mode=WORKBENCH_START, duration=0:00:17.886, duration_ms=17886, data={}
+timestamp=[2026-05-04 14:41:03], mode=WORKBENCH_UI_INIT, duration=0:00:00.113, duration_ms=113, data={editors_count=7, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,scene_engine_app,scene_engine_app_system,zybo_z7_10_plat}
